@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-invezgo",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "n8n community node for the Invezgo API: Indonesian stock market (IDX) data, broker summary, shareholders, financials, screener, watchlist and more.",
   "license": "MIT",
   "homepage": "https://github.com/Invezgo/n8n-nodes-invezgo#readme",
