@@ -44,7 +44,8 @@
       "dist/credentials/InvezgoApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/Invezgo/Invezgo.node.js"
+      "dist/nodes/Invezgo/Invezgo.node.js",
+      "dist/nodes/InvezgoTrigger/InvezgoTrigger.node.js"
     ]
   },
   "devDependencies": {

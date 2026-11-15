@@ -26,3 +26,16 @@ for (const opProp of ops) {
 	}
 }
 console.log(`OK: ${count} operations checked`);
+
+// Webhook signature: HMAC-SHA256(secret, `${timestamp}.${rawBody}`), 5-minute window.
+const { createHmac } = await import('node:crypto');
+const { verifySignature } = createRequire(import.meta.url)('../dist/nodes/InvezgoTrigger/InvezgoTrigger.node.js');
+const body = Buffer.from('{"id":"x","domain":"test","type":"ping","created_at":1,"data":{}}');
+const ts = '1762425300';
+const sig = 'sha256=' + createHmac('sha256', 's3cret').update(`${ts}.`).update(body).digest('hex');
+assert.equal(verifySignature('s3cret', ts, sig, body, 1762425300), null);
+assert.equal(verifySignature('wrong', ts, sig, body, 1762425300), 401);
+assert.equal(verifySignature('s3cret', ts, sig, Buffer.from(body + ' '), 1762425300), 401);
+assert.equal(verifySignature('s3cret', ts, sig, body, 1762425300 + 301), 400);
+assert.equal(verifySignature('s3cret', 'abc', sig, body, 1762425300), 400);
+console.log('OK: webhook signature checks');

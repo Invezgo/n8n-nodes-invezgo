@@ -51,6 +51,16 @@ The node is also usable as a tool by the n8n **AI Agent** node.
 - All times in responses are WIB (UTC+7) even though they end with `Z` — do not convert time zones.
 - Data is limited to the last 2 years. HTTP `402` means your plan does not include that endpoint; `429` means the rate limit or monthly quota was reached.
 
+### Invezgo Trigger (webhook)
+
+Starts a workflow when Invezgo sends a [webhook event](https://docs.invezgo.com/api-usage/webhook) — data updates (`update.summary`, `update.news`, …), Live Alerts with channel **WEBHOOK** (`alert.triggered`), quota warnings and `test.ping`.
+
+1. Add the **Invezgo Trigger** node, copy its **Production URL** (must be public HTTPS) and activate the workflow.
+2. Paste the URL into the **Webhook** card at [invezgo.com/id/setting/api](https://invezgo.com/id/setting/api) and save.
+3. Copy the secret shown there into the **Webhook Secret** field of your **Invezgo API** credential.
+
+Every request is checked against `X-Invezgo-Signature` and rejected if older than 5 minutes. Output is the event body plus `event` (`"{domain}.{type}"`) for routing with a **Switch** node. `update` events only carry `data.path`; fetch the fresh data with the **Invezgo** node.
+
 Example: **Schedule Trigger** (weekdays 16:30) → **Invezgo** (Market → Top Foreign Flow, Date = `{{ $today }}`) → **Telegram**.
 
 ## Panduan singkat (Bahasa Indonesia)
