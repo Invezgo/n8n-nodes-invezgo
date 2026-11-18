@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.2.1 (2026-11-18)
 
 - Invezgo Trigger now registers itself: activating the workflow sets the account webhook through `/users/webhook` and stores the signing secret; deactivating disables it. The credential's **Webhook Secret** field is removed.
 - All parameter descriptions are now in English (translated in `scripts/translations.json`; the generator fails on an untranslated description).
