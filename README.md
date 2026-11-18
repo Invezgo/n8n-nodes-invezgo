@@ -8,7 +8,6 @@ n8n community node for the [Invezgo API](https://api.invezgo.com): Indonesian st
 - [Credentials](#credentials)
 - [Operations](#operations)
 - [Usage](#usage)
-- [Panduan singkat (Bahasa Indonesia)](#panduan-singkat-bahasa-indonesia)
 - [Development](#development)
 
 ## Installation
@@ -55,20 +54,14 @@ The node is also usable as a tool by the n8n **AI Agent** node.
 
 Starts a workflow when Invezgo sends a [webhook event](https://docs.invezgo.com/api-usage/webhook) — data updates (`update.summary`, `update.news`, …), Live Alerts with channel **WEBHOOK** (`alert.triggered`), quota warnings and `test.ping`.
 
-1. Add the **Invezgo Trigger** node, copy its **Production URL** (must be public HTTPS) and activate the workflow.
-2. Paste the URL into the **Webhook** card at [invezgo.com/id/setting/api](https://invezgo.com/id/setting/api) and save.
-3. Copy the secret shown there into the **Webhook Secret** field of your **Invezgo API** credential.
+1. Add the **Invezgo Trigger** node and select the **Invezgo API** credential (ADVANCE plan or higher; `update.*` and `alert.*` events need PRIME or higher).
+2. Activate the workflow. n8n registers its Production URL as your account webhook and stores the signing secret itself. Your n8n instance must be reachable over public HTTPS.
+
+Invezgo allows **one webhook per account**: activating (or testing) the trigger replaces any webhook set on the website and rotates its secret. Deactivating the workflow disables the webhook.
 
 Every request is checked against `X-Invezgo-Signature` and rejected if older than 5 minutes. Output is the event body plus `event` (`"{domain}.{type}"`) for routing with a **Switch** node. `update` events only carry `data.path`; fetch the fresh data with the **Invezgo** node.
 
 Example: **Schedule Trigger** (weekdays 16:30) → **Invezgo** (Market → Top Foreign Flow, Date = `{{ $today }}`) → **Telegram**.
-
-## Panduan singkat (Bahasa Indonesia)
-
-1. Install node: **Settings → Community Nodes → Install** → ketik `n8n-nodes-invezgo`.
-2. Buat API key di [invezgo.com/id/setting/api](https://invezgo.com/id/setting/api), lalu buat credential **Invezgo API** di n8n.
-3. Tambahkan node **Invezgo**, pilih **Resource** (mis. *Market*) lalu **Operation** (mis. *Top Gainer & Loser*), isi kolom yang diminta (kode saham, tanggal), klik **Execute step**.
-4. Parameter tambahan ada di tombol **Add Option**. Penjelasan tiap kolom tampil saat kursor diarahkan ke ikon info.
 
 ## Development
 

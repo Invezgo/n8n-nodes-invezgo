@@ -1664,7 +1664,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Jumlah data per halaman, 1-100.",
+				"description": "Number of records per page, 1-100.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -1681,7 +1681,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Nomor halaman, dimulai dari 1.",
+				"description": "Page number, starting from 1.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -1696,7 +1696,7 @@ export const properties: INodeProperties[] = [
 				"type": "string",
 				"default": "",
 				"placeholder": "e.g. BBCA",
-				"description": "Filter kode saham, mis. \"BBCA\" (opsional).",
+				"description": "Filter by stock code, e.g. \"BBCA\" (optional).",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -1729,7 +1729,7 @@ export const properties: INodeProperties[] = [
 				"name": "active",
 				"type": "boolean",
 				"default": false,
-				"description": "\"true\": hanya suspensi yang masih berlaku (end_date null); \"false\": hanya yang sudah dicabut; kosongkan untuk semua (opsional).",
+				"description": "\"true\": only suspensions still in effect (end_date null); \"false\": only lifted suspensions; leave empty for all (optional).",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -1746,7 +1746,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Jumlah data per halaman, 1-100.",
+				"description": "Number of records per page, 1-100.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -1763,7 +1763,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Nomor halaman, dimulai dari 1.",
+				"description": "Page number, starting from 1.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -1778,7 +1778,7 @@ export const properties: INodeProperties[] = [
 				"type": "string",
 				"default": "",
 				"placeholder": "e.g. BBCA",
-				"description": "Filter kode saham, mis. \"BBCA\" (opsional).",
+				"description": "Filter by stock code, e.g. \"BBCA\" (optional).",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -1796,7 +1796,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham emiten yang tercatat di BEI, mis. \"BBCA\". Tidak case-sensitive. Daftar kode tersedia di \"/analysis/list/stock\".",
+		"description": "Code of a stock listed on the IDX, e.g. \"BBCA\". Not case-sensitive. The list of codes is available at \"/analysis/list/stock\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -1814,7 +1814,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal data (\"YYYY-MM-DD\"). Gunakan hari bursa; tanggal libur bursa dapat menghasilkan data kosong.",
+		"description": "Data date (\"YYYY-MM-DD\"). Use a trading day; market holidays may return empty data.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -1873,7 +1873,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": "change",
-				"description": "Kolom yang difilter: \"change\" = perubahan harga (%), \"value\" = nilai transaksi, \"volume\" = volume, \"ratio\" = rasio. Filter aktif hanya jika \"filter_column\", \"filter_operator\", dan \"filter_value\" dikirim bersamaan.",
+				"description": "Column to filter: \"change\" = price change (%), \"value\" = transaction value, \"volume\" = volume, \"ratio\" = ratio. The filter is only applied when \"filter_column\", \"filter_operator\" and \"filter_value\" are all sent.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -1913,7 +1913,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": "<",
-				"description": "Operator pembanding untuk filter. Contoh: \"filter_column=change&filter_operator=>&filter_value=5\" menampilkan saham yang naik lebih dari 5%.",
+				"description": "Comparison operator for the filter. Example: \"filter_column=change&filter_operator=>&filter_value=5\" shows stocks up more than 5%.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -1930,7 +1930,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"numberPrecision": 2
 				},
-				"description": "Nilai pembanding untuk filter. Mendukung bilangan desimal dan negatif, mis. \"5\" atau \"-2.5\".",
+				"description": "Comparison value for the filter. Supports decimals and negative numbers, e.g. \"5\" or \"-2.5\".",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -1947,7 +1947,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal data (\"YYYY-MM-DD\"). Gunakan hari bursa; tanggal libur bursa dapat menghasilkan data kosong.",
+		"description": "Data date (\"YYYY-MM-DD\"). Use a trading day; market holidays may return empty data.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -2006,7 +2006,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": "change",
-				"description": "Kolom yang difilter: \"change\" = perubahan harga (%), \"value\" = nilai transaksi, \"volume\" = volume, \"ratio\" = rasio. Filter aktif hanya jika \"filter_column\", \"filter_operator\", dan \"filter_value\" dikirim bersamaan.",
+				"description": "Column to filter: \"change\" = price change (%), \"value\" = transaction value, \"volume\" = volume, \"ratio\" = ratio. The filter is only applied when \"filter_column\", \"filter_operator\" and \"filter_value\" are all sent.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -2046,7 +2046,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": "<",
-				"description": "Operator pembanding untuk filter. Contoh: \"filter_column=change&filter_operator=>&filter_value=5\" menampilkan saham yang naik lebih dari 5%.",
+				"description": "Comparison operator for the filter. Example: \"filter_column=change&filter_operator=>&filter_value=5\" shows stocks up more than 5%.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -2063,7 +2063,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"numberPrecision": 2
 				},
-				"description": "Nilai pembanding untuk filter. Mendukung bilangan desimal dan negatif, mis. \"5\" atau \"-2.5\".",
+				"description": "Comparison value for the filter. Supports decimals and negative numbers, e.g. \"5\" or \"-2.5\".",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -2080,7 +2080,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal data (\"YYYY-MM-DD\"). Gunakan hari bursa; tanggal libur bursa dapat menghasilkan data kosong.",
+		"description": "Data date (\"YYYY-MM-DD\"). Use a trading day; market holidays may return empty data.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -2139,7 +2139,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": "change",
-				"description": "Kolom yang difilter: \"change\" = perubahan harga (%), \"value\" = nilai transaksi, \"volume\" = volume, \"ratio\" = rasio. Filter aktif hanya jika \"filter_column\", \"filter_operator\", dan \"filter_value\" dikirim bersamaan.",
+				"description": "Column to filter: \"change\" = price change (%), \"value\" = transaction value, \"volume\" = volume, \"ratio\" = ratio. The filter is only applied when \"filter_column\", \"filter_operator\" and \"filter_value\" are all sent.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -2179,7 +2179,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": "<",
-				"description": "Operator pembanding untuk filter. Contoh: \"filter_column=change&filter_operator=>&filter_value=5\" menampilkan saham yang naik lebih dari 5%.",
+				"description": "Comparison operator for the filter. Example: \"filter_column=change&filter_operator=>&filter_value=5\" shows stocks up more than 5%.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -2196,7 +2196,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"numberPrecision": 2
 				},
-				"description": "Nilai pembanding untuk filter. Mendukung bilangan desimal dan negatif, mis. \"5\" atau \"-2.5\".",
+				"description": "Comparison value for the filter. Supports decimals and negative numbers, e.g. \"5\" or \"-2.5\".",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -2213,7 +2213,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal data (\"YYYY-MM-DD\"). Gunakan hari bursa; tanggal libur bursa dapat menghasilkan data kosong.",
+		"description": "Data date (\"YYYY-MM-DD\"). Use a trading day; market holidays may return empty data.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -2272,7 +2272,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": "change",
-				"description": "Kolom yang difilter: \"change\" = perubahan harga (%), \"value\" = nilai transaksi, \"volume\" = volume, \"ratio\" = rasio. Filter aktif hanya jika \"filter_column\", \"filter_operator\", dan \"filter_value\" dikirim bersamaan.",
+				"description": "Column to filter: \"change\" = price change (%), \"value\" = transaction value, \"volume\" = volume, \"ratio\" = ratio. The filter is only applied when \"filter_column\", \"filter_operator\" and \"filter_value\" are all sent.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -2312,7 +2312,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": "<",
-				"description": "Operator pembanding untuk filter. Contoh: \"filter_column=change&filter_operator=>&filter_value=5\" menampilkan saham yang naik lebih dari 5%.",
+				"description": "Comparison operator for the filter. Example: \"filter_column=change&filter_operator=>&filter_value=5\" shows stocks up more than 5%.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -2329,7 +2329,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"numberPrecision": 2
 				},
-				"description": "Nilai pembanding untuk filter. Mendukung bilangan desimal dan negatif, mis. \"5\" atau \"-2.5\".",
+				"description": "Comparison value for the filter. Supports decimals and negative numbers, e.g. \"5\" or \"-2.5\".",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -2347,7 +2347,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham emiten yang tercatat di BEI, mis. \"BBCA\". Tidak case-sensitive. Daftar kode tersedia di \"/analysis/list/stock\".",
+		"description": "Code of a stock listed on the IDX, e.g. \"BBCA\". Not case-sensitive. The list of codes is available at \"/analysis/list/stock\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -2365,7 +2365,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal data (\"YYYY-MM-DD\"). Gunakan hari bursa; tanggal libur bursa dapat menghasilkan data kosong.",
+		"description": "Data date (\"YYYY-MM-DD\"). Use a trading day; market holidays may return empty data.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -2409,7 +2409,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Jumlah transaksi per halaman.",
+				"description": "Number of trades per page.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -2441,7 +2441,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": "ALL",
-				"description": "Jenis pasar: \"ALL\" = seluruh pasar, \"RG\" = Pasar Reguler, \"NG\" = Pasar Negosiasi, \"TN\" = Pasar Tunai. Diabaikan saat jam bursa (tanggal hari ini, 08:45–16:15 WIB pada hari bursa); hanya berlaku pada pengambilan data sehari penuh.",
+				"description": "Market type: \"ALL\" = all markets, \"RG\" = Regular Market, \"NG\" = Negotiated Market, \"TN\" = Cash Market. Ignored during market hours (today, 08:45–16:15 WIB on a trading day); only applies when fetching a full day of data.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -2459,7 +2459,7 @@ export const properties: INodeProperties[] = [
 					"minValue": 0,
 					"numberPrecision": 2
 				},
-				"description": "Volume maksimal transaksi yang ditampilkan, dalam lembar (1 lot = 100 lembar). Diabaikan saat jam bursa (tanggal hari ini, 08:45–16:15 WIB pada hari bursa); hanya berlaku pada pengambilan data sehari penuh.",
+				"description": "Maximum trade volume to show, in shares (1 lot = 100 shares). Ignored during market hours (today, 08:45–16:15 WIB on a trading day); only applies when fetching a full day of data.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -2477,7 +2477,7 @@ export const properties: INodeProperties[] = [
 					"minValue": 0,
 					"numberPrecision": 2
 				},
-				"description": "Volume minimal transaksi yang ditampilkan, dalam lembar (1 lot = 100 lembar). Berguna untuk menyaring transaksi besar. Diabaikan saat jam bursa (tanggal hari ini, 08:45–16:15 WIB pada hari bursa); hanya berlaku pada pengambilan data sehari penuh.",
+				"description": "Minimum trade volume to show, in shares (1 lot = 100 shares). Useful for filtering large trades. Ignored during market hours (today, 08:45–16:15 WIB on a trading day); only applies when fetching a full day of data.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -2505,7 +2505,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": "TIME",
-				"description": "Kolom pengurutan: \"TIME\" = waktu transaksi, \"PRICE\" = harga, \"VOLUME\" = volume. Diabaikan saat jam bursa (tanggal hari ini, 08:45–16:15 WIB pada hari bursa); hanya berlaku pada pengambilan data sehari penuh.",
+				"description": "Sort column: \"TIME\" = trade time, \"PRICE\" = price, \"VOLUME\" = volume. Ignored during market hours (today, 08:45–16:15 WIB on a trading day); only applies when fetching a full day of data.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -2522,7 +2522,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Nomor halaman, dimulai dari 1.",
+				"description": "Page number, starting from 1.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -2540,7 +2540,7 @@ export const properties: INodeProperties[] = [
 					"minValue": 1,
 					"numberPrecision": 2
 				},
-				"description": "Harga terendah transaksi yang ditampilkan (Rupiah). Menampilkan transaksi dengan harga >= \"pricefrom\". Diabaikan saat jam bursa (tanggal hari ini, 08:45–16:15 WIB pada hari bursa); hanya berlaku pada pengambilan data sehari penuh.",
+				"description": "Lowest trade price to show (Rupiah). Shows trades with price >= \"pricefrom\". Ignored during market hours (today, 08:45–16:15 WIB on a trading day); only applies when fetching a full day of data.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -2558,7 +2558,7 @@ export const properties: INodeProperties[] = [
 					"minValue": 1,
 					"numberPrecision": 2
 				},
-				"description": "Harga tertinggi transaksi yang ditampilkan (Rupiah). Menampilkan transaksi dengan harga <= \"priceto\". Diabaikan saat jam bursa (tanggal hari ini, 08:45–16:15 WIB pada hari bursa); hanya berlaku pada pengambilan data sehari penuh.",
+				"description": "Highest trade price to show (Rupiah). Shows trades with price <= \"priceto\". Ignored during market hours (today, 08:45–16:15 WIB on a trading day); only applies when fetching a full day of data.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -2582,7 +2582,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": "ASC",
-				"description": "Arah pengurutan: \"ASC\" = menaik (terlama lebih dulu), \"DESC\" = menurun (terbaru lebih dulu). Diabaikan saat jam bursa (tanggal hari ini, 08:45–16:15 WIB pada hari bursa); hanya berlaku pada pengambilan data sehari penuh.",
+				"description": "Sort direction: \"ASC\" = ascending (oldest first), \"DESC\" = descending (newest first). Ignored during market hours (today, 08:45–16:15 WIB on a trading day); only applies when fetching a full day of data.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -2597,7 +2597,7 @@ export const properties: INodeProperties[] = [
 				"type": "string",
 				"default": "",
 				"placeholder": "e.g. 09:00:00",
-				"description": "Jam awal transaksi dalam WIB, format \"HH:mm\" atau \"HH:mm:ss\". Diabaikan saat jam bursa (tanggal hari ini, 08:45–16:15 WIB pada hari bursa); hanya berlaku pada pengambilan data sehari penuh.",
+				"description": "Trade start time in WIB, format \"HH:mm\" or \"HH:mm:ss\". Ignored during market hours (today, 08:45–16:15 WIB on a trading day); only applies when fetching a full day of data.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -2612,7 +2612,7 @@ export const properties: INodeProperties[] = [
 				"type": "string",
 				"default": "",
 				"placeholder": "e.g. 16:00:00",
-				"description": "Jam akhir transaksi dalam WIB, format \"HH:mm\" atau \"HH:mm:ss\". Tanpa detik, dihitung hingga detik ke-59. Diabaikan saat jam bursa (tanggal hari ini, 08:45–16:15 WIB pada hari bursa); hanya berlaku pada pengambilan data sehari penuh.",
+				"description": "Trade end time in WIB, format \"HH:mm\" or \"HH:mm:ss\". Without seconds, it counts up to second 59. Ignored during market hours (today, 08:45–16:15 WIB on a trading day); only applies when fetching a full day of data.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -2640,7 +2640,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": "ALL",
-				"description": "Sisi transaksi: \"BUY\" = match di harga offer (inisiatif beli), \"SELL\" = match di harga bid (inisiatif jual), \"ALL\" = seluruh transaksi. Diabaikan saat jam bursa (tanggal hari ini, 08:45–16:15 WIB pada hari bursa); hanya berlaku pada pengambilan data sehari penuh.",
+				"description": "Trade side: \"BUY\" = matched at the offer price (buy-initiated), \"SELL\" = matched at the bid price (sell-initiated), \"ALL\" = all trades. Ignored during market hours (today, 08:45–16:15 WIB on a trading day); only applies when fetching a full day of data.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -2658,7 +2658,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham emiten yang tercatat di BEI, mis. \"BBCA\". Tidak case-sensitive. Daftar kode tersedia di \"/analysis/list/stock\".",
+		"description": "Code of a stock listed on the IDX, e.g. \"BBCA\". Not case-sensitive. The list of codes is available at \"/analysis/list/stock\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -2690,7 +2690,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "RG",
-		"description": "Jenis pasar: \"RG\" = Pasar Reguler, \"NG\" = Pasar Negosiasi, \"TN\" = Pasar Tunai. Gunakan \"RG\" untuk analisis pergerakan harga pada umumnya.",
+		"description": "Market type: \"RG\" = Regular Market, \"NG\" = Negotiated Market, \"TN\" = Cash Market. Use \"RG\" for general price movement analysis.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -2716,7 +2716,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham emiten yang tercatat di BEI, mis. \"BBCA\". Tidak case-sensitive. Daftar kode tersedia di \"/analysis/list/stock\".",
+		"description": "Code of a stock listed on the IDX, e.g. \"BBCA\". Not case-sensitive. The list of codes is available at \"/analysis/list/stock\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -2748,7 +2748,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "RG",
-		"description": "Jenis pasar: \"RG\" = Pasar Reguler, \"NG\" = Pasar Negosiasi, \"TN\" = Pasar Tunai. Gunakan \"RG\" untuk analisis pergerakan harga pada umumnya.",
+		"description": "Market type: \"RG\" = Regular Market, \"NG\" = Negotiated Market, \"TN\" = Cash Market. Use \"RG\" for general price movement analysis.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -2789,7 +2789,7 @@ export const properties: INodeProperties[] = [
 				"name": "date",
 				"type": "dateTime",
 				"default": "",
-				"description": "Tanggal order book historis (\"YYYY-MM-DD\"), tersedia mulai \"2026-03-25\". Wajib dikirim bersama \"time\"; kosongkan keduanya untuk data realtime.",
+				"description": "Historical order book date (\"YYYY-MM-DD\"), available from \"2026-03-25\". Must be sent together with \"time\"; leave both empty for realtime data.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -2804,7 +2804,7 @@ export const properties: INodeProperties[] = [
 				"type": "string",
 				"default": "",
 				"placeholder": "e.g. 09:30",
-				"description": "Jam snapshot order book dalam WIB, format \"HH:mm\" atau \"HH:mm:ss\" pada jam perdagangan (09:00–15:59); mengembalikan snapshot terdekat pada tanggal tersebut. Wajib dikirim bersama \"date\".",
+				"description": "Order book snapshot time in WIB, format \"HH:mm\" or \"HH:mm:ss\" within trading hours (09:00–15:59); returns the nearest snapshot on that date. Must be sent together with \"date\".",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -2822,7 +2822,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham emiten yang tercatat di BEI, mis. \"BBCA\". Tidak case-sensitive. Daftar kode tersedia di \"/analysis/list/stock\".",
+		"description": "Code of a stock listed on the IDX, e.g. \"BBCA\". Not case-sensitive. The list of codes is available at \"/analysis/list/stock\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -2843,7 +2843,7 @@ export const properties: INodeProperties[] = [
 		"typeOptions": {
 			"minValue": 1
 		},
-		"description": "Level harga order book (Rupiah) yang ingin dilihat detail antreannya. Harus sesuai fraksi harga saham.",
+		"description": "Order book price level (Rupiah) whose queue details you want to see. Must match the stock's tick size.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -2894,7 +2894,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "BUY",
-		"description": "Sisi antrean: \"BUY\" = antrean beli (bid), \"SELL\" = antrean jual (offer).",
+		"description": "Queue side: \"BUY\" = buy queue (bid), \"SELL\" = sell queue (offer).",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -2938,7 +2938,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Jumlah order per halaman.",
+				"description": "Number of orders per page.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -2955,7 +2955,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 0
 				},
-				"description": "Nomor halaman, dimulai dari 0.",
+				"description": "Page number, starting from 0.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -2973,7 +2973,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham emiten yang tercatat di BEI, mis. \"BBCA\". Tidak case-sensitive. Daftar kode tersedia di \"/analysis/list/stock\".",
+		"description": "Code of a stock listed on the IDX, e.g. \"BBCA\". Not case-sensitive. The list of codes is available at \"/analysis/list/stock\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -3005,7 +3005,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "RG",
-		"description": "Jenis pasar: \"RG\" = Pasar Reguler, \"NG\" = Pasar Negosiasi, \"TN\" = Pasar Tunai. Gunakan \"RG\" untuk analisis pergerakan harga pada umumnya.",
+		"description": "Market type: \"RG\" = Regular Market, \"NG\" = Negotiated Market, \"TN\" = Cash Market. Use \"RG\" for general price movement analysis.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -3046,7 +3046,7 @@ export const properties: INodeProperties[] = [
 				"name": "date",
 				"type": "dateTime",
 				"default": "",
-				"description": "Tanggal data historis (\"YYYY-MM-DD\"). Kosongkan untuk data realtime hari ini.",
+				"description": "Historical data date (\"YYYY-MM-DD\"). Leave empty for today's realtime data.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -3064,7 +3064,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. COMPOSITE",
-		"description": "Kode indeks BEI, mis. \"COMPOSITE\" (IHSG), \"LQ45\", atau \"IDX30\". Daftar kode tersedia di \"/analysis/list/index\".",
+		"description": "IDX index code, e.g. \"COMPOSITE\" (IHSG), \"LQ45\" or \"IDX30\". The list of codes is available at \"/analysis/list/index\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -3083,7 +3083,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham emiten yang tercatat di BEI, mis. \"BBCA\". Tidak case-sensitive. Daftar kode tersedia di \"/analysis/list/stock\".",
+		"description": "Code of a stock listed on the IDX, e.g. \"BBCA\". Not case-sensitive. The list of codes is available at \"/analysis/list/stock\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -3117,7 +3117,7 @@ export const properties: INodeProperties[] = [
 				"name": "to",
 				"type": "dateTime",
 				"default": "",
-				"description": "Tanggal akhir periode (\"YYYY-MM-DD\"). Harus lebih besar atau sama dengan \"from\". Opsional; default hari ini (WIB).",
+				"description": "Period end date (\"YYYY-MM-DD\"). Must be on or after \"from\". Optional; defaults to today (WIB).",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -3131,7 +3131,7 @@ export const properties: INodeProperties[] = [
 				"name": "from",
 				"type": "dateTime",
 				"default": "",
-				"description": "Tanggal awal periode (\"YYYY-MM-DD\"). Harus lebih kecil atau sama dengan \"to\", dengan rentang maksimal 730 hari. Opsional; default 1 tahun sebelum hari ini (WIB).",
+				"description": "Period start date (\"YYYY-MM-DD\"). Must be on or before \"to\", with a maximum range of 730 days. Optional; defaults to 1 year before today (WIB).",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -3149,7 +3149,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. COMPOSITE",
-		"description": "Kode indeks BEI, mis. \"COMPOSITE\" (IHSG), \"LQ45\", atau \"IDX30\". Daftar kode tersedia di \"/analysis/list/index\".",
+		"description": "IDX index code, e.g. \"COMPOSITE\" (IHSG), \"LQ45\" or \"IDX30\". The list of codes is available at \"/analysis/list/index\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -3167,7 +3167,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal awal periode (\"YYYY-MM-DD\"). Harus lebih kecil atau sama dengan \"to\", dengan rentang maksimal 730 hari.",
+		"description": "Period start date (\"YYYY-MM-DD\"). Must be on or before \"to\", with a maximum range of 730 days.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -3192,7 +3192,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal akhir periode (\"YYYY-MM-DD\"). Harus lebih besar atau sama dengan \"from\".",
+		"description": "Period end date (\"YYYY-MM-DD\"). Must be on or after \"from\".",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -3218,7 +3218,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham (mis. \"BBCA\") atau kode indeks (mis. \"COMPOSITE\"). Daftar kode tersedia di \"/analysis/list/stock\" dan \"/analysis/list/index\".",
+		"description": "Stock code (e.g. \"BBCA\") or index code (e.g. \"COMPOSITE\"). The lists of codes are available at \"/analysis/list/stock\" and \"/analysis/list/index\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -3236,7 +3236,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal awal periode (\"YYYY-MM-DD\"). Harus lebih kecil atau sama dengan \"to\". Batas data historis mengikuti \"timeframe\".",
+		"description": "Period start date (\"YYYY-MM-DD\"). Must be on or before \"to\". The historical data limit depends on \"timeframe\".",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -3261,7 +3261,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal akhir periode (\"YYYY-MM-DD\"). Harus lebih besar atau sama dengan \"from\".",
+		"description": "Period end date (\"YYYY-MM-DD\"). Must be on or after \"from\".",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -3336,7 +3336,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": "D",
-				"description": "Timeframe candle: \"1\", \"5\", \"15\", \"30\", \"60\" = menit; \"D\" = harian, \"W\" = mingguan, \"M\" = bulanan. Batas data historis: \"1\" = 3 bulan, \"5\" = 6 bulan, \"15\" = 12 bulan, lainnya 24 bulan. Opsional, default \"D\"; harus huruf kapital.",
+				"description": "Candle timeframe: \"1\", \"5\", \"15\", \"30\", \"60\" = minutes; \"D\" = daily, \"W\" = weekly, \"M\" = monthly. Historical data limit: \"1\" = 3 months, \"5\" = 6 months, \"15\" = 12 months, others 24 months. Optional, default \"D\"; must be uppercase.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -3354,7 +3354,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham emiten yang tercatat di BEI, mis. \"BBCA\". Tidak case-sensitive. Daftar kode tersedia di \"/analysis/list/stock\".",
+		"description": "Code of a stock listed on the IDX, e.g. \"BBCA\". Not case-sensitive. The list of codes is available at \"/analysis/list/stock\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -3414,7 +3414,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "bdm",
-		"description": "Indikator yang ditampilkan pada chart: \"bdm\" = aliran dana bandar, \"foreign\" = net beli/jual asing, \"ritel\" = aliran dana ritel, \"freq\" = frekuensi transaksi, \"ratio\" = rasio, \"lpm\" = Liquidity Pressure Model, \"corr_f\" = Correlation Foreign, \"par_f\" = Participation Foreign, \"intensity\" = Intensity, \"vol_ratio\" = Volume Rotation. Wajib huruf kecil.",
+		"description": "Indicator shown on the chart: \"bdm\" = market maker (bandar) flow, \"foreign\" = foreign net buy/sell, \"ritel\" = retail flow, \"freq\" = trade frequency, \"ratio\" = ratio, \"lpm\" = Liquidity Pressure Model, \"corr_f\" = Correlation Foreign, \"par_f\" = Participation Foreign, \"intensity\" = Intensity, \"vol_ratio\" = Volume Rotation. Must be lowercase.",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -3432,7 +3432,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal awal periode (\"YYYY-MM-DD\"). Harus lebih kecil atau sama dengan \"to\", dengan rentang maksimal 730 hari.",
+		"description": "Period start date (\"YYYY-MM-DD\"). Must be on or before \"to\", with a maximum range of 730 days.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -3457,7 +3457,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal akhir periode (\"YYYY-MM-DD\"). Harus lebih besar atau sama dengan \"from\".",
+		"description": "Period end date (\"YYYY-MM-DD\"). Must be on or after \"from\".",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -3499,7 +3499,7 @@ export const properties: INodeProperties[] = [
 				"type": "string",
 				"default": "",
 				"placeholder": "e.g. ADARO STRATEGIC INVESTMENTS",
-				"description": "Nama pemegang saham untuk melihat seluruh saham yang dimilikinya. Wajib diisi jika \"code\" kosong.",
+				"description": "Shareholder name, to see every stock they hold. Required if \"code\" is empty.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -3514,7 +3514,7 @@ export const properties: INodeProperties[] = [
 				"type": "string",
 				"default": "",
 				"placeholder": "e.g. BBCA",
-				"description": "Kode saham yang ingin dilihat daftar pemegang sahamnya, mis. \"BBCA\". Wajib diisi jika \"name\" kosong.",
+				"description": "Stock code whose shareholders you want to list, e.g. \"BBCA\". Required if \"name\" is empty.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -3548,7 +3548,7 @@ export const properties: INodeProperties[] = [
 				"type": "string",
 				"default": "",
 				"placeholder": "e.g. ADARO STRATEGIC INVESTMENTS",
-				"description": "Nama pemegang saham untuk melihat seluruh saham yang dimilikinya. Wajib diisi jika \"code\" kosong.",
+				"description": "Shareholder name, to see every stock they hold. Required if \"code\" is empty.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -3563,7 +3563,7 @@ export const properties: INodeProperties[] = [
 				"type": "string",
 				"default": "",
 				"placeholder": "e.g. BBCA",
-				"description": "Kode saham yang ingin dilihat daftar pemegang sahamnya, mis. \"BBCA\". Wajib diisi jika \"name\" kosong.",
+				"description": "Stock code whose shareholders you want to list, e.g. \"BBCA\". Required if \"name\" is empty.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -3581,7 +3581,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham emiten yang tercatat di BEI, mis. \"BBCA\". Tidak case-sensitive. Daftar kode tersedia di \"/analysis/list/stock\".",
+		"description": "Code of a stock listed on the IDX, e.g. \"BBCA\". Not case-sensitive. The list of codes is available at \"/analysis/list/stock\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -3618,7 +3618,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Kedalaman penelusuran relasi (jumlah lompatan). \"1\" = relasi langsung, \"2\" = termasuk relasi tingkat kedua, dan seterusnya.",
+				"description": "Relation search depth (number of hops). \"1\" = direct relations, \"2\" = includes second-level relations, and so on.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -3635,7 +3635,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 10
 				},
-				"description": "Jumlah node maksimal (saham dan pemegang saham) dalam graf. Nilai lebih besar menghasilkan graf yang lebih lengkap dengan waktu proses lebih lama.",
+				"description": "Maximum number of nodes (stocks and shareholders) in the graph. Larger values give a more complete graph but take longer to process.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -3653,7 +3653,7 @@ export const properties: INodeProperties[] = [
 					"minValue": 0,
 					"numberPrecision": 2
 				},
-				"description": "Persentase kepemilikan minimal yang ditampilkan. Mendukung desimal, mis. \"5\" untuk pemegang saham minimal 5%.",
+				"description": "Minimum ownership percentage to show. Supports decimals, e.g. \"5\" for shareholders with at least 5%.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -3668,7 +3668,7 @@ export const properties: INodeProperties[] = [
 				"type": "string",
 				"default": "",
 				"placeholder": "e.g. UBS AG",
-				"description": "Nama pemegang saham sebagai titik awal graf relasi kepemilikan. Wajib diisi jika \"code\" kosong.",
+				"description": "Shareholder name used as the starting point of the ownership relation graph. Required if \"code\" is empty.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -3685,7 +3685,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Jumlah relasi maksimal yang diambil dari setiap node.",
+				"description": "Maximum number of relations fetched from each node.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -3700,7 +3700,7 @@ export const properties: INodeProperties[] = [
 				"type": "string",
 				"default": "",
 				"placeholder": "e.g. BBCA",
-				"description": "Kode saham sebagai titik awal graf relasi kepemilikan. Wajib diisi jika \"name\" kosong.",
+				"description": "Stock code used as the starting point of the ownership relation graph. Required if \"name\" is empty.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -3718,7 +3718,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham emiten yang tercatat di BEI, mis. \"BBCA\". Tidak case-sensitive. Daftar kode tersedia di \"/analysis/list/stock\".",
+		"description": "Code of a stock listed on the IDX, e.g. \"BBCA\". Not case-sensitive. The list of codes is available at \"/analysis/list/stock\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -3737,7 +3737,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham emiten yang tercatat di BEI, mis. \"BBCA\". Tidak case-sensitive. Daftar kode tersedia di \"/analysis/list/stock\".",
+		"description": "Code of a stock listed on the IDX, e.g. \"BBCA\". Not case-sensitive. The list of codes is available at \"/analysis/list/stock\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -3758,7 +3758,7 @@ export const properties: INodeProperties[] = [
 		"typeOptions": {
 			"minValue": 1
 		},
-		"description": "Jumlah bulan terakhir yang ditampilkan, mis. \"6\" untuk 6 bulan terakhir. Akun TRIAL dibatasi maksimal 12 bulan.",
+		"description": "Number of most recent months to show, e.g. \"6\" for the last 6 months. TRIAL accounts are limited to 12 months.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -3784,7 +3784,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham emiten yang tercatat di BEI, mis. \"BBCA\". Tidak case-sensitive. Daftar kode tersedia di \"/analysis/list/stock\".",
+		"description": "Code of a stock listed on the IDX, e.g. \"BBCA\". Not case-sensitive. The list of codes is available at \"/analysis/list/stock\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -3805,7 +3805,7 @@ export const properties: INodeProperties[] = [
 		"typeOptions": {
 			"minValue": 1
 		},
-		"description": "Jumlah bulan terakhir yang ditampilkan, mis. \"6\" untuk 6 bulan terakhir. Akun TRIAL dibatasi maksimal 12 bulan.",
+		"description": "Number of most recent months to show, e.g. \"6\" for the last 6 months. TRIAL accounts are limited to 12 months.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -3831,7 +3831,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham emiten yang tercatat di BEI, mis. \"BBCA\". Tidak case-sensitive. Daftar kode tersedia di \"/analysis/list/stock\".",
+		"description": "Code of a stock listed on the IDX, e.g. \"BBCA\". Not case-sensitive. The list of codes is available at \"/analysis/list/stock\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -3850,7 +3850,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham emiten yang tercatat di BEI, mis. \"BBCA\". Tidak case-sensitive. Daftar kode tersedia di \"/analysis/list/stock\".",
+		"description": "Code of a stock listed on the IDX, e.g. \"BBCA\". Not case-sensitive. The list of codes is available at \"/analysis/list/stock\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -3871,7 +3871,7 @@ export const properties: INodeProperties[] = [
 		"typeOptions": {
 			"minValue": 1
 		},
-		"description": "Jumlah bulan terakhir yang ditampilkan, mis. \"6\" untuk 6 bulan terakhir. Akun TRIAL dibatasi maksimal 12 bulan.",
+		"description": "Number of most recent months to show, e.g. \"6\" for the last 6 months. TRIAL accounts are limited to 12 months.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -3897,7 +3897,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham emiten yang tercatat di BEI, mis. \"BBCA\". Tidak case-sensitive. Daftar kode tersedia di \"/analysis/list/stock\".",
+		"description": "Code of a stock listed on the IDX, e.g. \"BBCA\". Not case-sensitive. The list of codes is available at \"/analysis/list/stock\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -3915,7 +3915,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal awal periode (\"YYYY-MM-DD\"). Harus lebih kecil atau sama dengan \"to\", dengan rentang maksimal 730 hari.",
+		"description": "Period start date (\"YYYY-MM-DD\"). Must be on or before \"to\", with a maximum range of 730 days.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -3940,7 +3940,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal akhir periode (\"YYYY-MM-DD\"). Harus lebih besar atau sama dengan \"from\".",
+		"description": "Period end date (\"YYYY-MM-DD\"). Must be on or after \"from\".",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -3979,7 +3979,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "all",
-		"description": "Jenis investor yang dihitung: \"all\" = seluruh investor, \"f\" = investor asing, \"d\" = investor domestik.",
+		"description": "Investor type counted: \"all\" = all investors, \"f\" = foreign investors, \"d\" = domestic investors.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -4018,7 +4018,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "RG",
-		"description": "Jenis pasar: \"RG\" = Pasar Reguler, \"NG\" = Pasar Negosiasi, \"TN\" = Pasar Tunai. Gunakan \"RG\" untuk analisis pergerakan harga pada umumnya.",
+		"description": "Market type: \"RG\" = Regular Market, \"NG\" = Negotiated Market, \"TN\" = Cash Market. Use \"RG\" for general price movement analysis.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -4044,7 +4044,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. AK,BK",
-		"description": "Kode broker anggota bursa (2 huruf), mis. \"AK\". Dapat berisi beberapa kode yang dipisahkan koma, mis. \"AK,BK,YP\". Daftar broker tersedia di \"/analysis/list/broker\". Kode yang tidak terdiri dari 2 karakter akan diabaikan.",
+		"description": "Exchange member broker code (2 letters), e.g. \"AK\". Can hold several comma-separated codes, e.g. \"AK,BK,YP\". The list of brokers is available at \"/analysis/list/broker\". Codes that are not 2 characters long are ignored.",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -4062,7 +4062,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal awal periode (\"YYYY-MM-DD\"). Harus lebih kecil atau sama dengan \"to\", dengan rentang maksimal 730 hari.",
+		"description": "Period start date (\"YYYY-MM-DD\"). Must be on or before \"to\", with a maximum range of 730 days.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -4087,7 +4087,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal akhir periode (\"YYYY-MM-DD\"). Harus lebih besar atau sama dengan \"from\".",
+		"description": "Period end date (\"YYYY-MM-DD\"). Must be on or after \"from\".",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -4126,7 +4126,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "all",
-		"description": "Jenis investor yang dihitung: \"all\" = seluruh investor, \"f\" = investor asing, \"d\" = investor domestik.",
+		"description": "Investor type counted: \"all\" = all investors, \"f\" = foreign investors, \"d\" = domestic investors.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -4165,7 +4165,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "RG",
-		"description": "Jenis pasar: \"RG\" = Pasar Reguler, \"NG\" = Pasar Negosiasi, \"TN\" = Pasar Tunai. Gunakan \"RG\" untuk analisis pergerakan harga pada umumnya.",
+		"description": "Market type: \"RG\" = Regular Market, \"NG\" = Negotiated Market, \"TN\" = Cash Market. Use \"RG\" for general price movement analysis.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -4190,7 +4190,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal awal periode (\"YYYY-MM-DD\"). Harus lebih kecil atau sama dengan \"to\", dengan rentang maksimal 730 hari.",
+		"description": "Period start date (\"YYYY-MM-DD\"). Must be on or before \"to\", with a maximum range of 730 days.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -4215,7 +4215,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal akhir periode (\"YYYY-MM-DD\"). Harus lebih besar atau sama dengan \"from\".",
+		"description": "Period end date (\"YYYY-MM-DD\"). Must be on or after \"from\".",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -4310,7 +4310,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": "COMPOSITE",
-				"description": "Indeks acuan. \"COMPOSITE\" (IHSG) menampilkan rotasi antar sektor, sedangkan \"SYARIAH\" (saham syariah, dibandingkan dengan indeks ISSI) atau indeks sektoral IDX-IC (\"IDXENERGY\", \"IDXFINANCE\", dst.) menampilkan rotasi saham anggota kategori tersebut. \"ISSI\" diterima sebagai alias \"SYARIAH\". Wajib huruf kapital.",
+				"description": "Benchmark index. \"COMPOSITE\" (IHSG) shows rotation between sectors, while \"SYARIAH\" (sharia stocks, compared with the ISSI index) or an IDX-IC sector index (\"IDXENERGY\", \"IDXFINANCE\", etc.) shows rotation of the member stocks of that category. \"ISSI\" is accepted as an alias of \"SYARIAH\". Must be uppercase.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -4325,7 +4325,7 @@ export const properties: INodeProperties[] = [
 				"type": "string",
 				"default": "",
 				"placeholder": "e.g. BBCA",
-				"description": "Pencarian saham berdasarkan sebagian kode atau nama, mis. \"BB\" atau \"BANK\". Hanya berlaku jika \"base\" bukan \"COMPOSITE\".",
+				"description": "Search stocks by part of the code or name, e.g. \"BB\" or \"BANK\". Only applies when \"base\" is not \"COMPOSITE\".",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -4389,7 +4389,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": "change",
-				"description": "Kolom yang difilter: \"change\" = perubahan harga (%), \"value\" = nilai transaksi, \"volume\" = volume, \"foreign\" = net asing, \"freq\" = frekuensi, \"bdm\" = aliran dana bandar, \"ritel\" = aliran dana ritel, \"ratio\" = rasio, \"open\"/\"high\"/\"low\"/\"close\" = harga OHLC. Filter aktif hanya jika \"filter_column\", \"filter_operator\", dan \"filter_value\" dikirim bersamaan.",
+				"description": "Column to filter: \"change\" = price change (%), \"value\" = transaction value, \"volume\" = volume, \"foreign\" = foreign net, \"freq\" = frequency, \"bdm\" = market maker (bandar) flow, \"ritel\" = retail flow, \"ratio\" = ratio, \"open\"/\"high\"/\"low\"/\"close\" = OHLC prices. The filter is only applied when \"filter_column\", \"filter_operator\" and \"filter_value\" are all sent.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -4429,7 +4429,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": "<",
-				"description": "Operator pembanding untuk filter. Contoh: \"filter_column=change&filter_operator=>&filter_value=5\" menampilkan saham yang naik lebih dari 5%.",
+				"description": "Comparison operator for the filter. Example: \"filter_column=change&filter_operator=>&filter_value=5\" shows stocks up more than 5%.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -4446,7 +4446,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"numberPrecision": 2
 				},
-				"description": "Nilai pembanding untuk filter. Mendukung bilangan desimal dan negatif, mis. \"5\" atau \"-2.5\".",
+				"description": "Comparison value for the filter. Supports decimals and negative numbers, e.g. \"5\" or \"-2.5\".",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -4463,7 +4463,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Jumlah saham maksimal yang ditampilkan. Hanya berlaku jika \"base\" bukan \"COMPOSITE\".",
+				"description": "Maximum number of stocks to show. Only applies when \"base\" is not \"COMPOSITE\".",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -4480,7 +4480,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal awal periode (\"YYYY-MM-DD\"). Harus lebih kecil atau sama dengan \"to\", dengan rentang maksimal 730 hari.",
+		"description": "Period start date (\"YYYY-MM-DD\"). Must be on or before \"to\", with a maximum range of 730 days.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -4505,7 +4505,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal akhir periode (\"YYYY-MM-DD\"). Harus lebih besar atau sama dengan \"from\".",
+		"description": "Period end date (\"YYYY-MM-DD\"). Must be on or after \"from\".",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -4600,7 +4600,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": "COMPOSITE",
-				"description": "Indeks acuan. \"COMPOSITE\" (IHSG) menampilkan rotasi antar sektor, sedangkan \"SYARIAH\" (saham syariah, dibandingkan dengan indeks ISSI) atau indeks sektoral IDX-IC (\"IDXENERGY\", \"IDXFINANCE\", dst.) menampilkan rotasi saham anggota kategori tersebut. \"ISSI\" diterima sebagai alias \"SYARIAH\". Wajib huruf kapital.",
+				"description": "Benchmark index. \"COMPOSITE\" (IHSG) shows rotation between sectors, while \"SYARIAH\" (sharia stocks, compared with the ISSI index) or an IDX-IC sector index (\"IDXENERGY\", \"IDXFINANCE\", etc.) shows rotation of the member stocks of that category. \"ISSI\" is accepted as an alias of \"SYARIAH\". Must be uppercase.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -4615,7 +4615,7 @@ export const properties: INodeProperties[] = [
 				"type": "string",
 				"default": "",
 				"placeholder": "e.g. BBCA",
-				"description": "Pencarian saham berdasarkan sebagian kode atau nama, mis. \"BB\" atau \"BANK\". Hanya berlaku jika \"base\" bukan \"COMPOSITE\".",
+				"description": "Search stocks by part of the code or name, e.g. \"BB\" or \"BANK\". Only applies when \"base\" is not \"COMPOSITE\".",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -4679,7 +4679,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": "change",
-				"description": "Kolom yang difilter: \"change\" = perubahan harga (%), \"value\" = nilai transaksi, \"volume\" = volume, \"foreign\" = net asing, \"freq\" = frekuensi, \"bdm\" = aliran dana bandar, \"ritel\" = aliran dana ritel, \"ratio\" = rasio, \"open\"/\"high\"/\"low\"/\"close\" = harga OHLC. Filter aktif hanya jika \"filter_column\", \"filter_operator\", dan \"filter_value\" dikirim bersamaan.",
+				"description": "Column to filter: \"change\" = price change (%), \"value\" = transaction value, \"volume\" = volume, \"foreign\" = foreign net, \"freq\" = frequency, \"bdm\" = market maker (bandar) flow, \"ritel\" = retail flow, \"ratio\" = ratio, \"open\"/\"high\"/\"low\"/\"close\" = OHLC prices. The filter is only applied when \"filter_column\", \"filter_operator\" and \"filter_value\" are all sent.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -4719,7 +4719,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": "<",
-				"description": "Operator pembanding untuk filter. Contoh: \"filter_column=change&filter_operator=>&filter_value=5\" menampilkan saham yang naik lebih dari 5%.",
+				"description": "Comparison operator for the filter. Example: \"filter_column=change&filter_operator=>&filter_value=5\" shows stocks up more than 5%.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -4736,7 +4736,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"numberPrecision": 2
 				},
-				"description": "Nilai pembanding untuk filter. Mendukung bilangan desimal dan negatif, mis. \"5\" atau \"-2.5\".",
+				"description": "Comparison value for the filter. Supports decimals and negative numbers, e.g. \"5\" or \"-2.5\".",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -4760,7 +4760,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": "weekly",
-				"description": "Interval data pada Relative Rotation Graph (RRG): \"daily\" = harian, \"weekly\" = mingguan.",
+				"description": "Data interval of the Relative Rotation Graph (RRG): \"daily\" = daily, \"weekly\" = weekly.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -4777,7 +4777,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 5
 				},
-				"description": "Periode smoothing untuk menghitung RS-Ratio dan RS-Momentum. Nilai kecil lebih responsif, nilai besar lebih halus.",
+				"description": "Smoothing period used to compute RS-Ratio and RS-Momentum. Smaller values react faster, larger values are smoother.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -4794,7 +4794,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Jumlah saham maksimal yang ditampilkan. Hanya berlaku jika \"base\" bukan \"COMPOSITE\".",
+				"description": "Maximum number of stocks to show. Only applies when \"base\" is not \"COMPOSITE\".",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -4811,7 +4811,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Jumlah titik jejak (tail) per sektor atau saham untuk menunjukkan arah pergerakan.",
+				"description": "Number of trail (tail) points per sector or stock, showing the direction of movement.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -4829,7 +4829,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. AK,BK",
-		"description": "Kode broker anggota bursa (2 huruf), mis. \"AK\". Dapat berisi beberapa kode yang dipisahkan koma, mis. \"AK,BK,YP\". Daftar broker tersedia di \"/analysis/list/broker\". Kode yang tidak terdiri dari 2 karakter akan diabaikan.",
+		"description": "Exchange member broker code (2 letters), e.g. \"AK\". Can hold several comma-separated codes, e.g. \"AK,BK,YP\". The list of brokers is available at \"/analysis/list/broker\". Codes that are not 2 characters long are ignored.",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -4848,7 +4848,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham emiten yang tercatat di BEI, mis. \"BBCA\". Tidak case-sensitive. Daftar kode tersedia di \"/analysis/list/stock\".",
+		"description": "Code of a stock listed on the IDX, e.g. \"BBCA\". Not case-sensitive. The list of codes is available at \"/analysis/list/stock\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -4866,7 +4866,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal awal periode (\"YYYY-MM-DD\"). Harus lebih kecil atau sama dengan \"to\", dengan rentang maksimal 730 hari.",
+		"description": "Period start date (\"YYYY-MM-DD\"). Must be on or before \"to\", with a maximum range of 730 days.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -4891,7 +4891,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal akhir periode (\"YYYY-MM-DD\"). Harus lebih besar atau sama dengan \"from\".",
+		"description": "Period end date (\"YYYY-MM-DD\"). Must be on or after \"from\".",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -4930,7 +4930,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "all",
-		"description": "Jenis investor yang dihitung: \"all\" = seluruh investor, \"f\" = investor asing, \"d\" = investor domestik.",
+		"description": "Investor type counted: \"all\" = all investors, \"f\" = foreign investors, \"d\" = domestic investors.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -4969,7 +4969,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "RG",
-		"description": "Jenis pasar: \"RG\" = Pasar Reguler, \"NG\" = Pasar Negosiasi, \"TN\" = Pasar Tunai. Gunakan \"RG\" untuk analisis pergerakan harga pada umumnya.",
+		"description": "Market type: \"RG\" = Regular Market, \"NG\" = Negotiated Market, \"TN\" = Cash Market. Use \"RG\" for general price movement analysis.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -4995,7 +4995,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. AK",
-		"description": "Kode broker anggota bursa (2 huruf), mis. \"AK\". Dapat berisi beberapa kode yang dipisahkan koma, mis. \"AK,BK,YP\". Daftar broker tersedia di \"/analysis/list/broker\". Kode yang tidak terdiri dari 2 karakter akan diabaikan.",
+		"description": "Exchange member broker code (2 letters), e.g. \"AK\". Can hold several comma-separated codes, e.g. \"AK,BK,YP\". The list of brokers is available at \"/analysis/list/broker\". Codes that are not 2 characters long are ignored.",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -5013,7 +5013,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal awal periode (\"YYYY-MM-DD\"). Harus lebih kecil atau sama dengan \"to\", dengan rentang maksimal 730 hari.",
+		"description": "Period start date (\"YYYY-MM-DD\"). Must be on or before \"to\", with a maximum range of 730 days.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -5038,7 +5038,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal akhir periode (\"YYYY-MM-DD\"). Harus lebih besar atau sama dengan \"from\".",
+		"description": "Period end date (\"YYYY-MM-DD\"). Must be on or after \"from\".",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -5077,7 +5077,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "all",
-		"description": "Jenis investor yang dihitung: \"all\" = seluruh investor, \"f\" = investor asing, \"d\" = investor domestik.",
+		"description": "Investor type counted: \"all\" = all investors, \"f\" = foreign investors, \"d\" = domestic investors.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -5116,7 +5116,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "RG",
-		"description": "Jenis pasar: \"RG\" = Pasar Reguler, \"NG\" = Pasar Negosiasi, \"TN\" = Pasar Tunai. Gunakan \"RG\" untuk analisis pergerakan harga pada umumnya.",
+		"description": "Market type: \"RG\" = Regular Market, \"NG\" = Negotiated Market, \"TN\" = Cash Market. Use \"RG\" for general price movement analysis.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -5142,7 +5142,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham emiten yang tercatat di BEI, mis. \"BBCA\". Tidak case-sensitive. Daftar kode tersedia di \"/analysis/list/stock\".",
+		"description": "Code of a stock listed on the IDX, e.g. \"BBCA\". Not case-sensitive. The list of codes is available at \"/analysis/list/stock\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -5160,7 +5160,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal awal periode (\"YYYY-MM-DD\"). Harus lebih kecil atau sama dengan \"to\", dengan rentang maksimal 730 hari.",
+		"description": "Period start date (\"YYYY-MM-DD\"). Must be on or before \"to\", with a maximum range of 730 days.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -5185,7 +5185,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal akhir periode (\"YYYY-MM-DD\"). Harus lebih besar atau sama dengan \"from\".",
+		"description": "Period end date (\"YYYY-MM-DD\"). Must be on or after \"from\".",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -5224,7 +5224,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "volume",
-		"description": "Metrik yang dihitung: \"volume\" = jumlah lembar saham, \"value\" = nilai transaksi (Rupiah), \"freq\" = frekuensi transaksi.",
+		"description": "Metric to compute: \"volume\" = number of shares, \"value\" = transaction value (Rupiah), \"freq\" = trade frequency.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -5263,7 +5263,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "RG",
-		"description": "Jenis pasar: \"RG\" = Pasar Reguler, \"NG\" = Pasar Negosiasi, \"TN\" = Pasar Tunai. Gunakan \"RG\" untuk analisis pergerakan harga pada umumnya.",
+		"description": "Market type: \"RG\" = Regular Market, \"NG\" = Negotiated Market, \"TN\" = Cash Market. Use \"RG\" for general price movement analysis.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -5289,7 +5289,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. AK",
-		"description": "Kode broker anggota bursa (2 huruf), mis. \"AK\". Dapat berisi beberapa kode yang dipisahkan koma, mis. \"AK,BK,YP\". Daftar broker tersedia di \"/analysis/list/broker\". Kode yang tidak terdiri dari 2 karakter akan diabaikan.",
+		"description": "Exchange member broker code (2 letters), e.g. \"AK\". Can hold several comma-separated codes, e.g. \"AK,BK,YP\". The list of brokers is available at \"/analysis/list/broker\". Codes that are not 2 characters long are ignored.",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -5307,7 +5307,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal awal periode (\"YYYY-MM-DD\"). Harus lebih kecil atau sama dengan \"to\", dengan rentang maksimal 730 hari.",
+		"description": "Period start date (\"YYYY-MM-DD\"). Must be on or before \"to\", with a maximum range of 730 days.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -5332,7 +5332,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal akhir periode (\"YYYY-MM-DD\"). Harus lebih besar atau sama dengan \"from\".",
+		"description": "Period end date (\"YYYY-MM-DD\"). Must be on or after \"from\".",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -5371,7 +5371,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "volume",
-		"description": "Metrik yang dihitung: \"volume\" = jumlah lembar saham, \"value\" = nilai transaksi (Rupiah), \"freq\" = frekuensi transaksi.",
+		"description": "Metric to compute: \"volume\" = number of shares, \"value\" = transaction value (Rupiah), \"freq\" = trade frequency.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -5410,7 +5410,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "RG",
-		"description": "Jenis pasar: \"RG\" = Pasar Reguler, \"NG\" = Pasar Negosiasi, \"TN\" = Pasar Tunai. Gunakan \"RG\" untuk analisis pergerakan harga pada umumnya.",
+		"description": "Market type: \"RG\" = Regular Market, \"NG\" = Negotiated Market, \"TN\" = Cash Market. Use \"RG\" for general price movement analysis.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -5436,7 +5436,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham emiten yang tercatat di BEI, mis. \"BBCA\". Tidak case-sensitive. Daftar kode tersedia di \"/analysis/list/stock\".",
+		"description": "Code of a stock listed on the IDX, e.g. \"BBCA\". Not case-sensitive. The list of codes is available at \"/analysis/list/stock\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -5454,7 +5454,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal awal periode (\"YYYY-MM-DD\"). Harus lebih kecil atau sama dengan \"to\", dengan rentang maksimal 730 hari.",
+		"description": "Period start date (\"YYYY-MM-DD\"). Must be on or before \"to\", with a maximum range of 730 days.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -5479,7 +5479,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal akhir periode (\"YYYY-MM-DD\"). Harus lebih besar atau sama dengan \"from\".",
+		"description": "Period end date (\"YYYY-MM-DD\"). Must be on or after \"from\".",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -5518,7 +5518,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "vol",
-		"description": "Metrik inventori: \"vol\" = volume (lembar saham), \"val\" = nilai transaksi (Rupiah), \"freq\" = frekuensi transaksi.",
+		"description": "Inventory metric: \"vol\" = volume (shares), \"val\" = transaction value (Rupiah), \"freq\" = trade frequency.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -5557,7 +5557,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "all",
-		"description": "Jenis investor yang dihitung: \"all\" = seluruh investor, \"f\" = investor asing, \"d\" = investor domestik.",
+		"description": "Investor type counted: \"all\" = all investors, \"f\" = foreign investors, \"d\" = domestic investors.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -5600,7 +5600,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "ALL",
-		"description": "Jenis pasar: \"ALL\" = seluruh pasar, \"RG\" = Pasar Reguler, \"NG\" = Pasar Negosiasi, \"TN\" = Pasar Tunai.",
+		"description": "Market type: \"ALL\" = all markets, \"RG\" = Regular Market, \"NG\" = Negotiated Market, \"TN\" = Cash Market.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -5641,7 +5641,7 @@ export const properties: INodeProperties[] = [
 				"name": "filter",
 				"type": "string",
 				"default": "",
-				"description": "Kode broker yang ingin ditampilkan, dipisahkan koma, mis. \"AK,BK\". Kosongkan untuk menampilkan broker teratas.",
+				"description": "Comma-separated broker codes to show, e.g. \"AK,BK\". Leave empty to show the top brokers.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -5681,7 +5681,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": "<",
-				"description": "Saat ini tidak digunakan pada endpoint ini.",
+				"description": "Currently not used by this endpoint.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -5698,7 +5698,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"numberPrecision": 2
 				},
-				"description": "Saat ini tidak digunakan pada endpoint ini.",
+				"description": "Currently not used by this endpoint.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -5715,7 +5715,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Jumlah broker teratas yang ditampilkan.",
+				"description": "Number of top brokers to show.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -5733,7 +5733,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. AK,BK",
-		"description": "Kode broker anggota bursa (2 huruf), mis. \"AK\". Dapat berisi beberapa kode yang dipisahkan koma, mis. \"AK,BK,YP\". Daftar broker tersedia di \"/analysis/list/broker\". Setiap kode wajib 2 karakter.",
+		"description": "Exchange member broker code (2 letters), e.g. \"AK\". Can hold several comma-separated codes, e.g. \"AK,BK,YP\". The list of brokers is available at \"/analysis/list/broker\". Each code must be 2 characters.",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -5751,7 +5751,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal awal periode (\"YYYY-MM-DD\"). Harus lebih kecil atau sama dengan \"to\", dengan rentang maksimal 730 hari.",
+		"description": "Period start date (\"YYYY-MM-DD\"). Must be on or before \"to\", with a maximum range of 730 days.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -5776,7 +5776,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal akhir periode (\"YYYY-MM-DD\"). Harus lebih besar atau sama dengan \"from\".",
+		"description": "Period end date (\"YYYY-MM-DD\"). Must be on or after \"from\".",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -5815,7 +5815,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "vol",
-		"description": "Metrik inventori: \"vol\" = volume (lembar saham), \"val\" = nilai transaksi (Rupiah), \"freq\" = frekuensi transaksi.",
+		"description": "Inventory metric: \"vol\" = volume (shares), \"val\" = transaction value (Rupiah), \"freq\" = trade frequency.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -5854,7 +5854,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "all",
-		"description": "Jenis investor yang dihitung: \"all\" = seluruh investor, \"f\" = investor asing, \"d\" = investor domestik.",
+		"description": "Investor type counted: \"all\" = all investors, \"f\" = foreign investors, \"d\" = domestic investors.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -5897,7 +5897,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "ALL",
-		"description": "Jenis pasar: \"ALL\" = seluruh pasar, \"RG\" = Pasar Reguler, \"NG\" = Pasar Negosiasi, \"TN\" = Pasar Tunai.",
+		"description": "Market type: \"ALL\" = all markets, \"RG\" = Regular Market, \"NG\" = Negotiated Market, \"TN\" = Cash Market.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -5938,7 +5938,7 @@ export const properties: INodeProperties[] = [
 				"name": "filter",
 				"type": "string",
 				"default": "",
-				"description": "Kode saham yang ingin ditampilkan, dipisahkan koma, mis. \"BBCA,BBRI\". Kosongkan untuk menampilkan saham teratas.",
+				"description": "Comma-separated stock codes to show, e.g. \"BBCA,BBRI\". Leave empty to show the top stocks.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -5978,7 +5978,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": "<",
-				"description": "Operator pembanding untuk memfilter nilai \"scope\". Digunakan bersama \"filter_value\".",
+				"description": "Comparison operator used to filter the \"scope\" value. Used together with \"filter_value\".",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -5995,7 +5995,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"numberPrecision": 2
 				},
-				"description": "Nilai pembanding untuk \"filter_operator\". Contoh: \">\" dengan nilai \"0\" menampilkan saham yang terakumulasi (net beli).",
+				"description": "Comparison value for \"filter_operator\". Example: \">\" with value \"0\" shows accumulated stocks (net buy).",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -6012,7 +6012,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Jumlah saham teratas yang ditampilkan.",
+				"description": "Number of top stocks to show.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -6030,7 +6030,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham emiten yang tercatat di BEI, mis. \"BBCA\". Tidak case-sensitive. Daftar kode tersedia di \"/analysis/list/stock\".",
+		"description": "Code of a stock listed on the IDX, e.g. \"BBCA\". Not case-sensitive. The list of codes is available at \"/analysis/list/stock\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -6048,7 +6048,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal data (\"YYYY-MM-DD\"). Gunakan hari bursa; tanggal libur bursa dapat menghasilkan data kosong.",
+		"description": "Data date (\"YYYY-MM-DD\"). Use a trading day; market holidays may return empty data.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -6076,7 +6076,7 @@ export const properties: INodeProperties[] = [
 		"typeOptions": {
 			"minValue": 1
 		},
-		"description": "Interval waktu dalam menit, mis. \"5\" untuk per 5 menit atau \"60\" untuk per jam.",
+		"description": "Time interval in minutes, e.g. \"5\" for every 5 minutes or \"60\" for hourly.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -6111,7 +6111,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "value",
-		"description": "Basis perhitungan: \"value\" = nilai transaksi (Rupiah), \"volume\" = jumlah lembar saham.",
+		"description": "Calculation basis: \"value\" = transaction value (Rupiah), \"volume\" = number of shares.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -6137,7 +6137,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham emiten yang tercatat di BEI, mis. \"BBCA\". Tidak case-sensitive. Daftar kode tersedia di \"/analysis/list/stock\".",
+		"description": "Code of a stock listed on the IDX, e.g. \"BBCA\". Not case-sensitive. The list of codes is available at \"/analysis/list/stock\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -6155,7 +6155,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal data (\"YYYY-MM-DD\"). Gunakan hari bursa; tanggal libur bursa dapat menghasilkan data kosong.",
+		"description": "Data date (\"YYYY-MM-DD\"). Use a trading day; market holidays may return empty data.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -6183,7 +6183,7 @@ export const properties: INodeProperties[] = [
 		"typeOptions": {
 			"minValue": 1
 		},
-		"description": "Interval waktu dalam menit, mis. \"5\" untuk per 5 menit atau \"60\" untuk per jam.",
+		"description": "Time interval in minutes, e.g. \"5\" for every 5 minutes or \"60\" for hourly.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -6218,7 +6218,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "value",
-		"description": "Basis perhitungan: \"value\" = nilai transaksi (Rupiah), \"volume\" = jumlah lembar saham.",
+		"description": "Calculation basis: \"value\" = transaction value (Rupiah), \"volume\" = number of shares.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -6246,7 +6246,7 @@ export const properties: INodeProperties[] = [
 		"typeOptions": {
 			"minValue": 1
 		},
-		"description": "Jumlah broker teratas yang ditampilkan.",
+		"description": "Number of top brokers to show.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -6285,7 +6285,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "ALL",
-		"description": "Jenis investor di sisi pembeli: \"ALL\" = seluruh investor, \"F\" = asing, \"D\" = domestik.",
+		"description": "Investor type on the buy side: \"ALL\" = all investors, \"F\" = foreign, \"D\" = domestic.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -6324,7 +6324,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "ALL",
-		"description": "Jenis investor di sisi penjual: \"ALL\" = seluruh investor, \"F\" = asing, \"D\" = domestik.",
+		"description": "Investor type on the sell side: \"ALL\" = all investors, \"F\" = foreign, \"D\" = domestic.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -6363,7 +6363,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "RG",
-		"description": "Jenis pasar: \"RG\" = Pasar Reguler, \"NG\" = Pasar Negosiasi, \"TN\" = Pasar Tunai. Gunakan \"RG\" untuk analisis pergerakan harga pada umumnya.",
+		"description": "Market type: \"RG\" = Regular Market, \"NG\" = Negotiated Market, \"TN\" = Cash Market. Use \"RG\" for general price movement analysis.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -6404,7 +6404,7 @@ export const properties: INodeProperties[] = [
 				"name": "filter",
 				"type": "string",
 				"default": "",
-				"description": "Kode broker yang ingin ditampilkan, dipisahkan koma, mis. \"AK,BK\". Kosongkan untuk menampilkan broker teratas.",
+				"description": "Comma-separated broker codes to show, e.g. \"AK,BK\". Leave empty to show the top brokers.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -6422,7 +6422,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham emiten yang tercatat di BEI, mis. \"BBCA\". Tidak case-sensitive. Daftar kode tersedia di \"/analysis/list/stock\".",
+		"description": "Code of a stock listed on the IDX, e.g. \"BBCA\". Not case-sensitive. The list of codes is available at \"/analysis/list/stock\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -6440,7 +6440,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal data (\"YYYY-MM-DD\"). Gunakan hari bursa; tanggal libur bursa dapat menghasilkan data kosong.",
+		"description": "Data date (\"YYYY-MM-DD\"). Use a trading day; market holidays may return empty data.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -6475,7 +6475,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "value",
-		"description": "Basis perhitungan: \"value\" = nilai transaksi (Rupiah), \"volume\" = jumlah lembar saham.",
+		"description": "Calculation basis: \"value\" = transaction value (Rupiah), \"volume\" = number of shares.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -6514,7 +6514,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "ALL",
-		"description": "Jenis investor di sisi pembeli: \"ALL\" = seluruh investor, \"F\" = asing, \"D\" = domestik.",
+		"description": "Investor type on the buy side: \"ALL\" = all investors, \"F\" = foreign, \"D\" = domestic.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -6553,7 +6553,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "ALL",
-		"description": "Jenis investor di sisi penjual: \"ALL\" = seluruh investor, \"F\" = asing, \"D\" = domestik.",
+		"description": "Investor type on the sell side: \"ALL\" = all investors, \"F\" = foreign, \"D\" = domestic.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -6592,7 +6592,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "RG",
-		"description": "Jenis pasar: \"RG\" = Pasar Reguler, \"NG\" = Pasar Negosiasi, \"TN\" = Pasar Tunai. Gunakan \"RG\" untuk analisis pergerakan harga pada umumnya.",
+		"description": "Market type: \"RG\" = Regular Market, \"NG\" = Negotiated Market, \"TN\" = Cash Market. Use \"RG\" for general price movement analysis.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -6618,7 +6618,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham emiten yang tercatat di BEI, mis. \"BBCA\". Tidak case-sensitive. Daftar kode tersedia di \"/analysis/list/stock\".",
+		"description": "Code of a stock listed on the IDX, e.g. \"BBCA\". Not case-sensitive. The list of codes is available at \"/analysis/list/stock\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -6636,7 +6636,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal data (\"YYYY-MM-DD\"). Gunakan hari bursa; tanggal libur bursa dapat menghasilkan data kosong.",
+		"description": "Data date (\"YYYY-MM-DD\"). Use a trading day; market holidays may return empty data.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -6662,7 +6662,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham emiten yang tercatat di BEI, mis. \"BBCA\". Tidak case-sensitive. Daftar kode tersedia di \"/analysis/list/stock\".",
+		"description": "Code of a stock listed on the IDX, e.g. \"BBCA\". Not case-sensitive. The list of codes is available at \"/analysis/list/stock\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -6680,7 +6680,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal data (\"YYYY-MM-DD\"). Gunakan hari bursa; tanggal libur bursa dapat menghasilkan data kosong.",
+		"description": "Data date (\"YYYY-MM-DD\"). Use a trading day; market holidays may return empty data.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -6708,7 +6708,7 @@ export const properties: INodeProperties[] = [
 		"typeOptions": {
 			"minValue": 1
 		},
-		"description": "Interval waktu dalam menit, mis. \"5\" untuk per 5 menit atau \"60\" untuk per jam.",
+		"description": "Time interval in minutes, e.g. \"5\" for every 5 minutes or \"60\" for hourly.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -6734,7 +6734,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham emiten yang tercatat di BEI, mis. \"BBCA\". Tidak case-sensitive. Daftar kode tersedia di \"/analysis/list/stock\".",
+		"description": "Code of a stock listed on the IDX, e.g. \"BBCA\". Not case-sensitive. The list of codes is available at \"/analysis/list/stock\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -6753,7 +6753,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham emiten yang tercatat di BEI, mis. \"BBCA\". Tidak case-sensitive. Daftar kode tersedia di \"/analysis/list/stock\".",
+		"description": "Code of a stock listed on the IDX, e.g. \"BBCA\". Not case-sensitive. The list of codes is available at \"/analysis/list/stock\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -6774,7 +6774,7 @@ export const properties: INodeProperties[] = [
 		"typeOptions": {
 			"minValue": 1
 		},
-		"description": "Jumlah tahun data historis untuk menghitung pola musiman harga bulanan, mis. \"3\" untuk 3 tahun terakhir. Nilai efektif maksimal 20.",
+		"description": "Number of years of historical data used to compute the monthly price seasonality, e.g. \"3\" for the last 3 years. Effective maximum is 20.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -6816,7 +6816,7 @@ export const properties: INodeProperties[] = [
 				"type": "string",
 				"default": "",
 				"placeholder": "e.g. AK,BK",
-				"description": "Filter berdasarkan broker/kustodian tempat saham disimpan (kode 2 huruf). Dapat berisi beberapa kode yang dipisahkan koma.",
+				"description": "Filter by the broker/custodian holding the shares (2-letter code). Can hold several comma-separated codes.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -6830,7 +6830,7 @@ export const properties: INodeProperties[] = [
 				"name": "to",
 				"type": "dateTime",
 				"default": "",
-				"description": "Tanggal akhir periode laporan (\"YYYY-MM-DD\"). Opsional; filter tanggal hanya berlaku bila \"from\" dan \"to\" sama-sama diisi.",
+				"description": "Report period end date (\"YYYY-MM-DD\"). Optional; the date filter only applies when both \"from\" and \"to\" are set.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -6847,7 +6847,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Jumlah transaksi per halaman.",
+				"description": "Number of trades per page.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -6861,7 +6861,7 @@ export const properties: INodeProperties[] = [
 				"name": "name",
 				"type": "string",
 				"default": "",
-				"description": "Nama atau sebagian nama pemegang saham yang dicari. Kosongkan untuk menampilkan seluruh pemegang saham.",
+				"description": "Full or partial shareholder name to search for. Leave empty to show all shareholders.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -6878,7 +6878,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Nomor halaman, dimulai dari 1.",
+				"description": "Page number, starting from 1.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -6892,7 +6892,7 @@ export const properties: INodeProperties[] = [
 				"name": "from",
 				"type": "dateTime",
 				"default": "",
-				"description": "Tanggal awal periode laporan (\"YYYY-MM-DD\"). Opsional; filter tanggal hanya berlaku bila \"from\" dan \"to\" sama-sama diisi.",
+				"description": "Report period start date (\"YYYY-MM-DD\"). Optional; the date filter only applies when both \"from\" and \"to\" are set.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -6907,7 +6907,7 @@ export const properties: INodeProperties[] = [
 				"type": "string",
 				"default": "",
 				"placeholder": "e.g. BBCA",
-				"description": "Filter berdasarkan kode saham. Dapat berisi beberapa kode yang dipisahkan koma, mis. \"BBCA,BBRI,BMRI\".",
+				"description": "Filter by stock code. Can hold several comma-separated codes, e.g. \"BBCA,BBRI,BMRI\".",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -6925,7 +6925,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham emiten yang tercatat di BEI, mis. \"BBCA\". Tidak case-sensitive. Daftar kode tersedia di \"/analysis/list/stock\".",
+		"description": "Code of a stock listed on the IDX, e.g. \"BBCA\". Not case-sensitive. The list of codes is available at \"/analysis/list/stock\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -6943,7 +6943,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal data kepemilikan (\"YYYY-MM-DD\"). Wajib diisi.",
+		"description": "Ownership data date (\"YYYY-MM-DD\"). Required.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -6985,7 +6985,7 @@ export const properties: INodeProperties[] = [
 				"type": "string",
 				"default": "",
 				"placeholder": "e.g. AG",
-				"description": "Filter berdasarkan broker/kustodian (kode 2 huruf). Gunakan \"INSTITUSI\" untuk menampilkan kepemilikan institusi.",
+				"description": "Filter by broker/custodian (2-letter code). Use \"INSTITUSI\" to show institutional holdings.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -6999,7 +6999,7 @@ export const properties: INodeProperties[] = [
 				"name": "name",
 				"type": "string",
 				"default": "",
-				"description": "Nama pemegang saham dengan kepemilikan di atas 5% yang ingin ditampilkan.",
+				"description": "Name of the shareholder with more than 5% ownership to show.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -7032,7 +7032,7 @@ export const properties: INodeProperties[] = [
 				"name": "to",
 				"type": "dateTime",
 				"default": "",
-				"description": "Tanggal akhir periode laporan (\"YYYY-MM-DD\"). Opsional; filter tanggal hanya berlaku bila \"from\" dan \"to\" sama-sama diisi.",
+				"description": "Report period end date (\"YYYY-MM-DD\"). Optional; the date filter only applies when both \"from\" and \"to\" are set.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -7049,7 +7049,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Jumlah transaksi per halaman.",
+				"description": "Number of trades per page.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -7063,7 +7063,7 @@ export const properties: INodeProperties[] = [
 				"name": "name",
 				"type": "string",
 				"default": "",
-				"description": "Nama atau sebagian nama pemegang saham yang dicari. Kosongkan untuk menampilkan seluruh pemegang saham.",
+				"description": "Full or partial shareholder name to search for. Leave empty to show all shareholders.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -7080,7 +7080,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Nomor halaman, dimulai dari 1.",
+				"description": "Page number, starting from 1.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -7094,7 +7094,7 @@ export const properties: INodeProperties[] = [
 				"name": "from",
 				"type": "dateTime",
 				"default": "",
-				"description": "Tanggal awal periode laporan (\"YYYY-MM-DD\"). Opsional; filter tanggal hanya berlaku bila \"from\" dan \"to\" sama-sama diisi.",
+				"description": "Report period start date (\"YYYY-MM-DD\"). Optional; the date filter only applies when both \"from\" and \"to\" are set.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -7109,7 +7109,7 @@ export const properties: INodeProperties[] = [
 				"type": "string",
 				"default": "",
 				"placeholder": "e.g. BBCA",
-				"description": "Filter berdasarkan kode saham. Dapat berisi beberapa kode yang dipisahkan koma, mis. \"BBCA,BBRI,BMRI\".",
+				"description": "Filter by stock code. Can hold several comma-separated codes, e.g. \"BBCA,BBRI,BMRI\".",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -7127,7 +7127,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham emiten yang tercatat di BEI, mis. \"BBCA\". Tidak case-sensitive. Daftar kode tersedia di \"/analysis/list/stock\".",
+		"description": "Code of a stock listed on the IDX, e.g. \"BBCA\". Not case-sensitive. The list of codes is available at \"/analysis/list/stock\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -7145,7 +7145,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal data kepemilikan (\"YYYY-MM-DD\"). Wajib diisi.",
+		"description": "Ownership data date (\"YYYY-MM-DD\"). Required.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -7186,7 +7186,7 @@ export const properties: INodeProperties[] = [
 				"name": "name",
 				"type": "string",
 				"default": "",
-				"description": "Nama pemegang saham dengan kepemilikan 1%–5% yang ingin ditampilkan.",
+				"description": "Name of the shareholder with 1%–5% ownership to show.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -7219,7 +7219,7 @@ export const properties: INodeProperties[] = [
 				"name": "to",
 				"type": "dateTime",
 				"default": "",
-				"description": "Tanggal akhir periode laporan (\"YYYY-MM-DD\"). Opsional; filter tanggal hanya berlaku bila \"from\" dan \"to\" sama-sama diisi.",
+				"description": "Report period end date (\"YYYY-MM-DD\"). Optional; the date filter only applies when both \"from\" and \"to\" are set.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -7236,7 +7236,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Jumlah transaksi per halaman.",
+				"description": "Number of trades per page.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -7250,7 +7250,7 @@ export const properties: INodeProperties[] = [
 				"name": "name",
 				"type": "string",
 				"default": "",
-				"description": "Nama atau sebagian nama pemegang saham yang dicari. Kosongkan untuk menampilkan seluruh pemegang saham.",
+				"description": "Full or partial shareholder name to search for. Leave empty to show all shareholders.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -7267,7 +7267,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Nomor halaman, dimulai dari 1.",
+				"description": "Page number, starting from 1.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -7281,7 +7281,7 @@ export const properties: INodeProperties[] = [
 				"name": "from",
 				"type": "dateTime",
 				"default": "",
-				"description": "Tanggal awal periode laporan (\"YYYY-MM-DD\"). Opsional; filter tanggal hanya berlaku bila \"from\" dan \"to\" sama-sama diisi.",
+				"description": "Report period start date (\"YYYY-MM-DD\"). Optional; the date filter only applies when both \"from\" and \"to\" are set.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -7296,7 +7296,7 @@ export const properties: INodeProperties[] = [
 				"type": "string",
 				"default": "",
 				"placeholder": "e.g. BBCA",
-				"description": "Filter berdasarkan kode saham. Dapat berisi beberapa kode yang dipisahkan koma, mis. \"BBCA,BBRI,BMRI\".",
+				"description": "Filter by stock code. Can hold several comma-separated codes, e.g. \"BBCA,BBRI,BMRI\".",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -7314,7 +7314,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham emiten yang tercatat di BEI, mis. \"BBCA\". Tidak case-sensitive. Daftar kode tersedia di \"/analysis/list/stock\".",
+		"description": "Code of a stock listed on the IDX, e.g. \"BBCA\". Not case-sensitive. The list of codes is available at \"/analysis/list/stock\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -7332,7 +7332,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal laporan transaksi insider di BEI (\"YYYY-MM-DD\"). Wajib diisi.",
+		"description": "Date of the insider transaction report on the IDX (\"YYYY-MM-DD\"). Required.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -7373,7 +7373,7 @@ export const properties: INodeProperties[] = [
 				"name": "name",
 				"type": "string",
 				"default": "",
-				"description": "Nama insider (direksi, komisaris, atau pemegang saham pengendali) yang ingin ditampilkan.",
+				"description": "Name of the insider (director, commissioner or controlling shareholder) to show.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -7391,7 +7391,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham emiten yang tercatat di BEI, mis. \"BBCA\". Tidak case-sensitive. Daftar kode tersedia di \"/analysis/list/stock\".",
+		"description": "Code of a stock listed on the IDX, e.g. \"BBCA\". Not case-sensitive. The list of codes is available at \"/analysis/list/stock\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -7423,7 +7423,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "BS",
-		"description": "Jenis laporan keuangan: \"BS\" = neraca (balance sheet), \"IS\" = laba rugi (income statement), \"CF\" = arus kas (cash flow).",
+		"description": "Financial statement type: \"BS\" = balance sheet, \"IS\" = income statement, \"CF\" = cash flow.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -7474,7 +7474,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "FY",
-		"description": "Periode laporan: \"FY\" = tahunan, \"Q\" = seluruh kuartal, \"Q1\"–\"Q4\" = kuartal tertentu.",
+		"description": "Report period: \"FY\" = annual, \"Q\" = all quarters, \"Q1\"–\"Q4\" = a specific quarter.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -7518,7 +7518,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Jumlah periode laporan terakhir yang ditampilkan.",
+				"description": "Number of most recent report periods to show.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -7536,7 +7536,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham emiten yang tercatat di BEI, mis. \"BBCA\". Tidak case-sensitive. Daftar kode tersedia di \"/analysis/list/stock\".",
+		"description": "Code of a stock listed on the IDX, e.g. \"BBCA\". Not case-sensitive. The list of codes is available at \"/analysis/list/stock\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -7568,7 +7568,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "BS",
-		"description": "Jenis laporan keuangan: \"BS\" = neraca (balance sheet), \"IS\" = laba rugi (income statement), \"CF\" = arus kas (cash flow).",
+		"description": "Financial statement type: \"BS\" = balance sheet, \"IS\" = income statement, \"CF\" = cash flow.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -7619,7 +7619,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "FY",
-		"description": "Periode laporan: \"FY\" = tahunan, \"Q\" = seluruh kuartal, \"Q1\"–\"Q4\" = kuartal tertentu.",
+		"description": "Report period: \"FY\" = annual, \"Q\" = all quarters, \"Q1\"–\"Q4\" = a specific quarter.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -7645,7 +7645,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. 4e2a2ad6e9b8adbfb2c135edf0f86f5e",
-		"description": "ID akun laporan keuangan (string 32 karakter) yang akan ditampilkan sebagai grafik. Gunakan nilai \"rows[].id\" dari response \"/analysis/financial-statement/{code}\" dengan \"statement\" yang sama; ID yang tidak ditemukan menghasilkan \"account_id\"/\"name\" null dengan \"amount\" 0.",
+		"description": "Financial statement account ID (32-character string) to show as a chart. Use the \"rows[].id\" value from the \"/analysis/financial-statement/{code}\" response with the same \"statement\"; an unknown ID returns \"account_id\"/\"name\" null with \"amount\" 0.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -7689,7 +7689,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Jumlah periode laporan terakhir yang ditampilkan.",
+				"description": "Number of most recent report periods to show.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -7707,7 +7707,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham emiten yang tercatat di BEI, mis. \"BBCA\". Tidak case-sensitive. Daftar kode tersedia di \"/analysis/list/stock\".",
+		"description": "Code of a stock listed on the IDX, e.g. \"BBCA\". Not case-sensitive. The list of codes is available at \"/analysis/list/stock\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -7751,7 +7751,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "FY",
-		"description": "Periode laporan: \"FY\" = tahunan, \"Q\" = seluruh kuartal, \"Q1\"–\"Q4\" = kuartal tertentu.",
+		"description": "Report period: \"FY\" = annual, \"Q\" = all quarters, \"Q1\"–\"Q4\" = a specific quarter.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -7795,7 +7795,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Jumlah periode terakhir yang ditampilkan.",
+				"description": "Number of most recent periods to show.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -7813,7 +7813,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham emiten yang tercatat di BEI, mis. \"BBCA\". Tidak case-sensitive. Daftar kode tersedia di \"/analysis/list/stock\".",
+		"description": "Code of a stock listed on the IDX, e.g. \"BBCA\". Not case-sensitive. The list of codes is available at \"/analysis/list/stock\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -7857,7 +7857,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "FY",
-		"description": "Periode laporan: \"FY\" = tahunan, \"Q\" = seluruh kuartal, \"Q1\"–\"Q4\" = kuartal tertentu.",
+		"description": "Report period: \"FY\" = annual, \"Q\" = all quarters, \"Q1\"–\"Q4\" = a specific quarter.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -7883,7 +7883,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. ROE",
-		"description": "Nama rasio atau statistik kunci yang akan ditampilkan sebagai grafik, mis. \"ROE\", \"PER\", atau \"PBV\". Gunakan nama yang sama persis dengan response \"/analysis/keystat/{code}\".",
+		"description": "Name of the ratio or key statistic to show as a chart, e.g. \"ROE\", \"PER\" or \"PBV\". Use the exact name from the \"/analysis/keystat/{code}\" response.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -7927,7 +7927,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Jumlah periode terakhir yang ditampilkan (default 8). Maksimal 8 untuk periode kuartalan (\"Q\", \"Q1\"-\"Q4\") dan 3 untuk \"type=FY\"; karena default 8 melebihi batas FY, \"limit\" (1-3) wajib diisi saat \"type=FY\".",
+				"description": "Number of most recent periods to show (default 8). Maximum 8 for quarterly periods (\"Q\", \"Q1\"-\"Q4\") and 3 for \"type=FY\"; since the default of 8 exceeds the FY limit, \"limit\" (1-3) is required when \"type=FY\".",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -7945,7 +7945,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham emiten yang tercatat di BEI, mis. \"BBCA\". Tidak case-sensitive. Daftar kode tersedia di \"/analysis/list/stock\".",
+		"description": "Code of a stock listed on the IDX, e.g. \"BBCA\". Not case-sensitive. The list of codes is available at \"/analysis/list/stock\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -7989,7 +7989,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "FY",
-		"description": "Periode laporan: \"FY\" = tahunan, \"Q\" = seluruh kuartal, \"Q1\"–\"Q4\" = kuartal tertentu.",
+		"description": "Report period: \"FY\" = annual, \"Q\" = all quarters, \"Q1\"–\"Q4\" = a specific quarter.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -8033,7 +8033,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Jumlah periode terakhir yang ditampilkan.",
+				"description": "Number of most recent periods to show.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -8069,7 +8069,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Jumlah data per halaman.",
+				"description": "Number of records per page.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -8086,7 +8086,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Nomor halaman, dimulai dari 1.",
+				"description": "Page number, starting from 1.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -8101,7 +8101,7 @@ export const properties: INodeProperties[] = [
 				"type": "string",
 				"default": "",
 				"placeholder": "e.g. BBCA",
-				"description": "Filter hasil untuk satu kode saham tertentu.",
+				"description": "Filter the results to a single stock code.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -8161,7 +8161,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": "IPO",
-				"description": "Jenis aksi korporasi: \"IPO\", \"PUBLIC_EXPOSE\" = paparan publik, \"RUPS_SCHEDULE\" / \"RUPS_RESULT\" = jadwal / hasil RUPS, \"DIVIDEND\", \"RIGHT\" = rights issue, \"WARRANT\", \"BONUS\", \"SPLIT\" = stock split, \"REVERSE\" = reverse split, \"CONVERTION\" = konversi.",
+				"description": "Corporate action type: \"IPO\", \"PUBLIC_EXPOSE\" = public expose, \"RUPS_SCHEDULE\" / \"RUPS_RESULT\" = shareholders' meeting (RUPS) schedule / result, \"DIVIDEND\", \"RIGHT\" = rights issue, \"WARRANT\", \"BONUS\", \"SPLIT\" = stock split, \"REVERSE\" = reverse split, \"CONVERTION\" = conversion.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -8179,7 +8179,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA|GOTO|TLKM",
-		"description": "Daftar kode saham yang dipisahkan \"|\" atau koma, mis. \"BBCA|GOTO|TLKM\". Maksimal 20 kode (paket MAX) atau 50 kode (paket ELITE) per request.",
+		"description": "Stock codes separated by \"|\" or commas, e.g. \"BBCA|GOTO|TLKM\". Maximum 20 codes (MAX plan) or 50 codes (ELITE plan) per request.",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -8213,7 +8213,7 @@ export const properties: INodeProperties[] = [
 				"name": "date",
 				"type": "dateTime",
 				"default": "",
-				"description": "Tanggal order book historis (\"YYYY-MM-DD\"), data tersedia mulai \"2026-03-25\". Kirim bersama \"time\"; kosongkan keduanya untuk data realtime.",
+				"description": "Historical order book date (\"YYYY-MM-DD\"), data available from \"2026-03-25\". Send together with \"time\"; leave both empty for realtime data.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -8241,7 +8241,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": "RG",
-				"description": "Jenis pasar: \"RG\" = Pasar Reguler, \"NG\" = Pasar Negosiasi, \"TN\" = Pasar Tunai. Gunakan \"RG\" untuk analisis pergerakan harga pada umumnya. Default \"RG\" bila tidak diisi.",
+				"description": "Market type: \"RG\" = Regular Market, \"NG\" = Negotiated Market, \"TN\" = Cash Market. Use \"RG\" for general price movement analysis. Defaults to \"RG\" when empty.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -8256,7 +8256,7 @@ export const properties: INodeProperties[] = [
 				"type": "string",
 				"default": "",
 				"placeholder": "e.g. 09:30",
-				"description": "Jam order book dalam WIB, format \"HH:mm\" dengan presisi menit. Kirim bersama \"date\".",
+				"description": "Order book time in WIB, format \"HH:mm\" or \"HH:mm:ss\"; the nearest snapshot on that date is returned. Send together with \"date\".",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -8274,7 +8274,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA|GOTO|TLKM",
-		"description": "Daftar kode saham yang dipisahkan \"|\" atau koma, mis. \"BBCA|GOTO|TLKM\". Maksimal 20 kode (paket MAX) atau 50 kode (paket ELITE) per request.",
+		"description": "Stock codes separated by \"|\" or commas, e.g. \"BBCA|GOTO|TLKM\". Maximum 20 codes (MAX plan) or 50 codes (ELITE plan) per request.",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -8308,7 +8308,7 @@ export const properties: INodeProperties[] = [
 				"name": "date",
 				"type": "dateTime",
 				"default": "",
-				"description": "Tanggal data historis (\"YYYY-MM-DD\"). Kosongkan untuk data realtime hari ini.",
+				"description": "Historical data date (\"YYYY-MM-DD\"). Leave empty for today's realtime data.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -8336,7 +8336,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": "RG",
-				"description": "Jenis pasar: \"RG\" = Pasar Reguler, \"NG\" = Pasar Negosiasi, \"TN\" = Pasar Tunai. Gunakan \"RG\" untuk analisis pergerakan harga pada umumnya. Default \"RG\" bila tidak diisi.",
+				"description": "Market type: \"RG\" = Regular Market, \"NG\" = Negotiated Market, \"TN\" = Cash Market. Use \"RG\" for general price movement analysis. Defaults to \"RG\" when empty.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -8354,7 +8354,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. COMPOSITE|LQ45|IDX30",
-		"description": "Daftar kode indeks yang dipisahkan \"|\" atau koma, mis. \"COMPOSITE|LQ45|IDX30\". Maksimal 20 kode (paket MAX) atau 50 kode (paket ELITE) per request. Daftar indeks tersedia di \"/analysis/list/index\".",
+		"description": "Index codes separated by \"|\" or commas, e.g. \"COMPOSITE|LQ45|IDX30\". Maximum 20 codes (MAX plan) or 50 codes (ELITE plan) per request. The list of indexes is available at \"/analysis/list/index\".",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -8373,7 +8373,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. bank",
-		"description": "Kata kunci pencarian berupa kode saham, nama perusahaan, atau username.",
+		"description": "Search keyword: a stock code, company name or username.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -8399,7 +8399,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. bank",
-		"description": "Kata kunci pencarian berupa kode saham atau nama perusahaan.",
+		"description": "Search keyword: a stock code or company name.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -8443,7 +8443,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Nomor halaman hasil pencarian, dimulai dari 1. Setiap halaman berisi 20 hasil.",
+				"description": "Search results page number, starting from 1. Each page holds 20 results.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -8461,7 +8461,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. invezgo",
-		"description": "Kata kunci pencarian berupa username atau nama pengguna.",
+		"description": "Search keyword: a username or user's name.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -8505,7 +8505,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Nomor halaman hasil pencarian, dimulai dari 1. Setiap halaman berisi 20 hasil.",
+				"description": "Search results page number, starting from 1. Each page holds 20 results.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -8525,7 +8525,7 @@ export const properties: INodeProperties[] = [
 		"typeOptions": {
 			"rows": 2
 		},
-		"description": "Formula untuk screening saham - Mengacu pada [Variabel Formula](https://docs.invezgo.com/features/formula-variables/)",
+		"description": "Stock screening formula. See [Formula Variables](https://docs.invezgo.com/features/formula-variables/).",
 		"routing": {
 			"send": {
 				"type": "body",
@@ -8620,7 +8620,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": [],
-				"description": "Kategori indeks saham yang ingin disaring (opsional, bisa multi seperti [\"SYARIAH\", \"IDXENERGY\"])",
+				"description": "Stock index categories to screen (optional, can be several, e.g. [\"SYARIAH\", \"IDXENERGY\"]).",
 				"routing": {
 					"send": {
 						"type": "body",
@@ -8758,7 +8758,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": [],
-				"description": "Kategori indeks saham yang ingin disaring (opsional, bisa multi seperti [\"SYARIAH\", \"IDXENERGY\"])",
+				"description": "Stock index categories to screen (optional, can be several, e.g. [\"SYARIAH\", \"IDXENERGY\"]).",
 				"routing": {
 					"send": {
 						"type": "body",
@@ -8806,7 +8806,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. 1",
-		"description": "ID preset screener, diambil dari field \"id\" pada response \"GET /screener\".",
+		"description": "Screener preset ID, from the \"id\" field of the \"GET /screener\" response.",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -8945,7 +8945,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": [],
-				"description": "Kategori indeks saham yang ingin disaring (opsional, bisa multi seperti [\"SYARIAH\", \"IDXENERGY\"])",
+				"description": "Stock index categories to screen (optional, can be several, e.g. [\"SYARIAH\", \"IDXENERGY\"]).",
 				"routing": {
 					"send": {
 						"type": "body",
@@ -8993,7 +8993,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. 1",
-		"description": "ID preset screener, diambil dari field \"id\" pada response \"GET /screener\".",
+		"description": "Screener preset ID, from the \"id\" field of the \"GET /screener\" response.",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -9027,7 +9027,7 @@ export const properties: INodeProperties[] = [
 				"name": "to",
 				"type": "dateTime",
 				"default": "",
-				"description": "Waktu akhir dalam WIB, format \"YYYY-MM-DD HH:mm:ss\" atau \"YYYY-MM-DD\". Harus lebih besar atau sama dengan \"from\". Default waktu saat ini.",
+				"description": "End time in WIB, format \"YYYY-MM-DD HH:mm:ss\" or \"YYYY-MM-DD\". Must be on or after \"from\". Defaults to now.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -9044,7 +9044,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Jumlah log maksimal yang dikembalikan. Kosongkan untuk mengambil seluruh log.",
+				"description": "Maximum number of logs returned. Leave empty to fetch all logs.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -9058,7 +9058,7 @@ export const properties: INodeProperties[] = [
 				"name": "from",
 				"type": "dateTime",
 				"default": "",
-				"description": "Waktu awal dalam WIB, format \"YYYY-MM-DD HH:mm:ss\" atau \"YYYY-MM-DD\". Maksimal 30 hari ke belakang. Default 24 jam terakhir.",
+				"description": "Start time in WIB, format \"YYYY-MM-DD HH:mm:ss\" or \"YYYY-MM-DD\". At most 30 days back. Defaults to the last 24 hours.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -9075,7 +9075,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 100
 				},
-				"description": "Filter log berdasarkan HTTP status code, mis. \"200\", \"422\", atau \"429\".",
+				"description": "Filter logs by HTTP status code, e.g. \"200\", \"422\" or \"429\".",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -9109,7 +9109,7 @@ export const properties: INodeProperties[] = [
 				"type": "string",
 				"default": "",
 				"placeholder": "e.g. null",
-				"description": "ID grup watchlist yang ingin ditampilkan, diambil dari field \"id\" pada response \"GET /watchlists/group\". Kosongkan atau isi \"null\" untuk menampilkan seluruh watchlist dari semua grup.",
+				"description": "Watchlist group ID to show, from the \"id\" field of the \"GET /watchlists/group\" response. Leave empty or set \"null\" to show every watchlist from all groups.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -9313,7 +9313,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. 1",
-		"description": "ID grup watchlist, diambil dari field \"id\" pada response \"GET /watchlists/group\".",
+		"description": "Watchlist group ID, from the \"id\" field of the \"GET /watchlists/group\" response.",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -9356,7 +9356,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. 1",
-		"description": "ID grup watchlist, diambil dari field \"id\" pada response \"GET /watchlists/group\".",
+		"description": "Watchlist group ID, from the \"id\" field of the \"GET /watchlists/group\" response.",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -9375,7 +9375,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. 1",
-		"description": "ID item watchlist, diambil dari field \"id\" pada response \"GET /watchlists\".",
+		"description": "Watchlist item ID, from the \"id\" field of the \"GET /watchlists\" response.",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -9446,7 +9446,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. 1",
-		"description": "ID item watchlist, diambil dari field \"id\" pada response \"GET /watchlists\".",
+		"description": "Watchlist item ID, from the \"id\" field of the \"GET /watchlists\" response.",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -9748,7 +9748,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal awal periode (\"YYYY-MM-DD\").",
+		"description": "Period start date (\"YYYY-MM-DD\").",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -9773,7 +9773,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal akhir periode (\"YYYY-MM-DD\"). Harus lebih besar atau sama dengan \"from\".",
+		"description": "Period end date (\"YYYY-MM-DD\"). Must be on or after \"from\".",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -9824,7 +9824,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal awal periode (\"YYYY-MM-DD\").",
+		"description": "Period start date (\"YYYY-MM-DD\").",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -9849,7 +9849,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal akhir periode (\"YYYY-MM-DD\"). Harus lebih besar atau sama dengan \"from\".",
+		"description": "Period end date (\"YYYY-MM-DD\"). Must be on or after \"from\".",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -9997,7 +9997,7 @@ export const properties: INodeProperties[] = [
 		"typeOptions": {
 			"rows": 2
 		},
-		"description": "Formula alert, maksimal 2048 karakter (sama dengan formula screener)",
+		"description": "Alert formula, at most 2048 characters (same as the screener formula).",
 		"routing": {
 			"send": {
 				"type": "body",
@@ -10092,7 +10092,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": [],
-				"description": "Kategori indeks saham yang ingin disaring (opsional, bisa multi seperti [\"SYARIAH\", \"IDXENERGY\"])",
+				"description": "Stock index categories to screen (optional, can be several, e.g. [\"SYARIAH\", \"IDXENERGY\"]).",
 				"routing": {
 					"send": {
 						"type": "body",
@@ -10120,7 +10120,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": "TELEGRAM",
-				"description": "Tujuan pengiriman alert. TELEGRAM (default), WEBHOOK (webhook akun, domain \"alert\"), atau MCP (MCP Events untuk agen AI). WEBHOOK dan MCP membutuhkan paket PRIME, MAX, atau ELITE.",
+				"description": "Where the alert is delivered. TELEGRAM (default), WEBHOOK (account webhook, domain \"alert\") or MCP (MCP Events for AI agents). WEBHOOK and MCP require a PRIME, MAX or ELITE plan.",
 				"routing": {
 					"send": {
 						"type": "body",
@@ -10264,7 +10264,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": [],
-				"description": "Kategori indeks saham yang ingin disaring (opsional, bisa multi seperti [\"SYARIAH\", \"IDXENERGY\"])",
+				"description": "Stock index categories to screen (optional, can be several, e.g. [\"SYARIAH\", \"IDXENERGY\"]).",
 				"routing": {
 					"send": {
 						"type": "body",
@@ -10282,7 +10282,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. 1",
-		"description": "ID alert, diambil dari field \"id\" pada response \"GET /alerts\".",
+		"description": "Alert ID, from the \"id\" field of the \"GET /alerts\" response.",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -10423,7 +10423,7 @@ export const properties: INodeProperties[] = [
 		"typeOptions": {
 			"rows": 2
 		},
-		"description": "Formula alert, maksimal 2048 karakter (sama dengan formula screener)",
+		"description": "Alert formula, at most 2048 characters (same as the screener formula).",
 		"routing": {
 			"send": {
 				"type": "body",
@@ -10518,7 +10518,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": [],
-				"description": "Kategori indeks saham yang ingin disaring (opsional, bisa multi seperti [\"SYARIAH\", \"IDXENERGY\"])",
+				"description": "Stock index categories to screen (optional, can be several, e.g. [\"SYARIAH\", \"IDXENERGY\"]).",
 				"routing": {
 					"send": {
 						"type": "body",
@@ -10546,7 +10546,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": "TELEGRAM",
-				"description": "Tujuan pengiriman alert. TELEGRAM (default), WEBHOOK (webhook akun, domain \"alert\"), atau MCP (MCP Events untuk agen AI). WEBHOOK dan MCP membutuhkan paket PRIME, MAX, atau ELITE. Jika tidak dikirim, channel alert tidak berubah.",
+				"description": "Where the alert is delivered. TELEGRAM (default), WEBHOOK (account webhook, domain \"alert\") or MCP (MCP Events for AI agents). WEBHOOK and MCP require a PRIME, MAX or ELITE plan. If not sent, the alert channel is unchanged.",
 				"routing": {
 					"send": {
 						"type": "body",
@@ -10594,7 +10594,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. 1",
-		"description": "ID alert, diambil dari field \"id\" pada response \"GET /alerts\".",
+		"description": "Alert ID, from the \"id\" field of the \"GET /alerts\" response.",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -10615,7 +10615,7 @@ export const properties: INodeProperties[] = [
 		"typeOptions": {
 			"minValue": 1
 		},
-		"description": "Nomor halaman, dimulai dari 1.",
+		"description": "Page number, starting from 1.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -10643,7 +10643,7 @@ export const properties: INodeProperties[] = [
 		"typeOptions": {
 			"minValue": 1
 		},
-		"description": "Jumlah postingan per halaman.",
+		"description": "Number of posts per page.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -10690,7 +10690,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "POST",
-		"description": "Kategori postingan: \"POST\" = postingan umum, \"ARTICLE\" = artikel, \"VIDEO\" = video, \"STOCKPICK\" = rekomendasi saham, \"POLLING\" = polling.",
+		"description": "Post category: \"POST\" = general post, \"ARTICLE\" = article, \"VIDEO\" = video, \"STOCKPICK\" = stock pick, \"POLLING\" = poll.",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -10711,7 +10711,7 @@ export const properties: INodeProperties[] = [
 		"typeOptions": {
 			"minValue": 1
 		},
-		"description": "Nomor halaman, dimulai dari 1.",
+		"description": "Page number, starting from 1.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -10739,7 +10739,7 @@ export const properties: INodeProperties[] = [
 		"typeOptions": {
 			"minValue": 1
 		},
-		"description": "Jumlah postingan per halaman.",
+		"description": "Number of posts per page.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -10765,7 +10765,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham untuk menampilkan postingan pada ruang diskusi saham tersebut.",
+		"description": "Stock code whose discussion space posts you want to show.",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -10786,7 +10786,7 @@ export const properties: INodeProperties[] = [
 		"typeOptions": {
 			"minValue": 1
 		},
-		"description": "Nomor halaman, dimulai dari 1.",
+		"description": "Page number, starting from 1.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -10814,7 +10814,7 @@ export const properties: INodeProperties[] = [
 		"typeOptions": {
 			"minValue": 1
 		},
-		"description": "Jumlah postingan per halaman.",
+		"description": "Number of posts per page.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -10840,7 +10840,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. BBCA",
-		"description": "Kode saham untuk menampilkan postingan pada ruang diskusi saham tersebut.",
+		"description": "Stock code whose discussion space posts you want to show.",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -10880,7 +10880,7 @@ export const properties: INodeProperties[] = [
 			}
 		],
 		"default": "POST",
-		"description": "Kategori postingan: \"POST\" = postingan umum, \"ARTICLE\" = artikel, \"VIDEO\" = video, \"STOCKPICK\" = rekomendasi saham, \"POLLING\" = polling.",
+		"description": "Post category: \"POST\" = general post, \"ARTICLE\" = article, \"VIDEO\" = video, \"STOCKPICK\" = stock pick, \"POLLING\" = poll.",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -10901,7 +10901,7 @@ export const properties: INodeProperties[] = [
 		"typeOptions": {
 			"minValue": 1
 		},
-		"description": "Nomor halaman, dimulai dari 1.",
+		"description": "Page number, starting from 1.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -10929,7 +10929,7 @@ export const properties: INodeProperties[] = [
 		"typeOptions": {
 			"minValue": 1
 		},
-		"description": "Jumlah postingan per halaman.",
+		"description": "Number of posts per page.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -10955,7 +10955,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. 1",
-		"description": "ID postingan, diambil dari field \"id\" pada response daftar postingan (mis. \"GET /posts\").",
+		"description": "Post ID, from the \"id\" field of a post list response (e.g. \"GET /posts\").",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -10974,7 +10974,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. 1",
-		"description": "ID postingan, diambil dari field \"id\" pada response daftar postingan (mis. \"GET /posts\").",
+		"description": "Post ID, from the \"id\" field of a post list response (e.g. \"GET /posts\").",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -10995,7 +10995,7 @@ export const properties: INodeProperties[] = [
 		"typeOptions": {
 			"minValue": 1
 		},
-		"description": "Nomor halaman, dimulai dari 1.",
+		"description": "Page number, starting from 1.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -11023,7 +11023,7 @@ export const properties: INodeProperties[] = [
 		"typeOptions": {
 			"minValue": 1
 		},
-		"description": "Jumlah postingan per halaman.",
+		"description": "Number of posts per page.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -11051,7 +11051,7 @@ export const properties: INodeProperties[] = [
 		"typeOptions": {
 			"minValue": 1
 		},
-		"description": "Nomor halaman, dimulai dari 1.",
+		"description": "Page number, starting from 1.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -11079,7 +11079,7 @@ export const properties: INodeProperties[] = [
 		"typeOptions": {
 			"minValue": 1
 		},
-		"description": "Jumlah postingan per halaman.",
+		"description": "Number of posts per page.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -11107,7 +11107,7 @@ export const properties: INodeProperties[] = [
 		"typeOptions": {
 			"minValue": 1
 		},
-		"description": "Nomor halaman, dimulai dari 1.",
+		"description": "Page number, starting from 1.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -11135,7 +11135,7 @@ export const properties: INodeProperties[] = [
 		"typeOptions": {
 			"minValue": 1
 		},
-		"description": "Jumlah postingan per halaman.",
+		"description": "Number of posts per page.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -11161,7 +11161,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. 1",
-		"description": "ID postingan, diambil dari field \"id\" pada response daftar postingan (mis. \"GET /posts\").",
+		"description": "Post ID, from the \"id\" field of a post list response (e.g. \"GET /posts\").",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -11179,7 +11179,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal awal periode (\"YYYY-MM-DD\").",
+		"description": "Period start date (\"YYYY-MM-DD\").",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -11204,7 +11204,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal akhir periode (\"YYYY-MM-DD\"). Harus lebih besar atau sama dengan \"from\".",
+		"description": "Period end date (\"YYYY-MM-DD\"). Must be on or after \"from\".",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -11255,7 +11255,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal awal periode (\"YYYY-MM-DD\").",
+		"description": "Period start date (\"YYYY-MM-DD\").",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -11280,7 +11280,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal akhir periode (\"YYYY-MM-DD\"). Harus lebih besar atau sama dengan \"from\".",
+		"description": "Period end date (\"YYYY-MM-DD\"). Must be on or after \"from\".",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -11305,7 +11305,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal awal periode (\"YYYY-MM-DD\").",
+		"description": "Period start date (\"YYYY-MM-DD\").",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -11330,7 +11330,7 @@ export const properties: INodeProperties[] = [
 		"required": true,
 		"type": "dateTime",
 		"default": "",
-		"description": "Tanggal akhir periode (\"YYYY-MM-DD\"). Harus lebih besar atau sama dengan \"from\".",
+		"description": "Period end date (\"YYYY-MM-DD\"). Must be on or after \"from\".",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -11356,7 +11356,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. COMPOSITE",
-		"description": "Kode indeks pembanding pada grafik, mis. \"COMPOSITE\". Bila dikirim kosong (\"code=\"), setiap tanggal berisi satu baris per indeks.",
+		"description": "Benchmark index code on the chart, e.g. \"COMPOSITE\". When sent empty (\"code=\"), each date holds one row per index.",
 		"routing": {
 			"send": {
 				"type": "query",
@@ -11382,7 +11382,7 @@ export const properties: INodeProperties[] = [
 		"type": "string",
 		"default": "",
 		"placeholder": "e.g. 1",
-		"description": "ID transaksi terealisasi, diambil dari field \"id\" pada response \"GET /trades\".",
+		"description": "Realized trade ID, from the \"id\" field of the \"GET /trades\" response.",
 		"displayOptions": {
 			"show": {
 				"resource": [
@@ -11454,7 +11454,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Jumlah data per halaman, 1-100.",
+				"description": "Number of records per page, 1-100.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -11471,7 +11471,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Nomor halaman, dimulai dari 1.",
+				"description": "Page number, starting from 1.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -11486,7 +11486,7 @@ export const properties: INodeProperties[] = [
 				"type": "string",
 				"default": "",
 				"placeholder": "e.g. BBCA",
-				"description": "Filter kode saham, mis. \"BBCA\" (opsional).",
+				"description": "Filter by stock code, e.g. \"BBCA\" (optional).",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -11522,7 +11522,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Jumlah data per halaman, 1-100.",
+				"description": "Number of records per page, 1-100.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -11539,7 +11539,7 @@ export const properties: INodeProperties[] = [
 				"typeOptions": {
 					"minValue": 1
 				},
-				"description": "Nomor halaman, dimulai dari 1.",
+				"description": "Page number, starting from 1.",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -11554,7 +11554,7 @@ export const properties: INodeProperties[] = [
 				"type": "string",
 				"default": "",
 				"placeholder": "e.g. BBCA",
-				"description": "Filter kode saham, mis. \"BBCA\" (opsional).",
+				"description": "Filter by stock code, e.g. \"BBCA\" (optional).",
 				"routing": {
 					"send": {
 						"type": "query",
@@ -11690,7 +11690,7 @@ export const properties: INodeProperties[] = [
 					}
 				],
 				"default": "shareholder",
-				"description": "Filter tipe laporan (opsional, huruf besar/kecil bebas).",
+				"description": "Filter by report type (optional, case-insensitive).",
 				"routing": {
 					"send": {
 						"type": "query",

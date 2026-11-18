@@ -24,15 +24,6 @@ export class InvezgoApi implements ICredentialType {
 			default: '',
 			description: 'Generate your API key at https://invezgo.com/id/setting/api',
 		},
-		{
-			displayName: 'Webhook Secret',
-			name: 'webhookSecret',
-			type: 'string',
-			typeOptions: { password: true },
-			default: '',
-			description:
-				'Only needed for the Invezgo Trigger node. Copy it from the Webhook card on the same API settings page.',
-		},
 	];
 
 	authenticate: IAuthenticateGeneric = {

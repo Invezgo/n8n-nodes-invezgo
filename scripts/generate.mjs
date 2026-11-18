@@ -52,6 +52,14 @@ const english = (d = '') => {
 	const en = d.split('[English]')[1] ?? d;
 	return clean(en.trim().split(/\n\s*\n/)[0]);
 };
+// The spec documents parameters in Indonesian only; n8n verified nodes need English UI text.
+const TRANSLATIONS = JSON.parse(readFileSync(new URL('./translations.json', import.meta.url), 'utf8'));
+const translate = (d) => {
+	const id = clean(d);
+	if (!id) return '';
+	if (!TRANSLATIONS[id]) throw new Error(`Add an English translation to scripts/translations.json for: ${id}`);
+	return TRANSLATIONS[id];
+};
 const resolve = (s) => (s?.$ref ? schemas[s.$ref.split('/').pop()] : s) || {};
 
 // Same top-level name must keep the same shape across operations, otherwise rename.
@@ -132,7 +140,7 @@ for (const [path, methods] of Object.entries(spec.paths)) {
 
 		for (const prm of op.parameters ?? []) {
 			const isDate = /YYYY-MM-DD/.test(prm.description ?? '');
-			const desc = clean(prm.description);
+			const desc = translate(prm.description);
 			const p = field(prm.name, prm.schema, { required: prm.required, description: desc, example: prm.example ?? prm.schema?.example, isDate });
 			if (prm.in === 'path') {
 				p.required = true;
@@ -156,7 +164,7 @@ for (const [path, methods] of Object.entries(spec.paths)) {
 		const body = resolve(op.requestBody?.content?.['application/json']?.schema);
 		for (const [n, s] of Object.entries(body.properties ?? {})) {
 			const req = body.required?.includes(n);
-			const desc = clean(s.description);
+			const desc = translate(s.description);
 			const p = field(n, s, { required: req, description: desc, isDate: n === 'date' });
 			if (req) {
 				p.name = uniqueName(n, JSON.stringify([p.type, p.options, 'body']));
